@@ -1,0 +1,523 @@
+/*
++ style by IvanBotty.cloud
++ date : 2019-01-06
++ V 1.0
+*/
+
+body{
+    margin: 0;
+    padding: 0;
+    background: white;
+    font-family: 'Noto Sans', sans-serif;
+    color: #333;
+}
+
+@keyframes loader {
+    0%{
+        left: -5px;
+        width: 5px;
+    }
+    25%{
+        left: 0;
+        width: 25%;
+    }
+    50%{
+        left: 25%;
+        width: 100%;
+        right: 25%;
+    }
+    75%{
+        right: 25%;
+        width: 25%;
+    }
+    100%{
+        right: -5px;
+        width: 5px;   
+    }
+}
+
+.loader::after{
+    top: 0;
+    content: '';
+    position: absolute;
+    height: 5px;
+    width: 5px;
+    background-color: blueviolet;
+    z-index: 9999999999;
+    animation: loader ease-out 0.5s;
+}
+
+@keyframes fade-out {
+    from {transform: translate3d(0, 0, 0);}
+    to {transform: translate3d(0, 1000px, 0);}
+}
+
+@keyframes fade-in {
+    from {transform: translate3d(0, 1000px, 0);}
+    to {transform: translate3d(0, 0, 0);}
+}
+
+.fadeInElement {
+    animation: fade-in 0.5s;
+}
+
+.fadeOutElement {
+    animation: fade-out 0.5s;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.fixed{
+    overflow: hidden;
+}
+
+@keyframes scrollText{
+    0% {
+        transform: translateX(0%);
+    }
+    50%{
+        transform:  translateX(-100%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+
+.textScroll{
+    animation-duration: 20s;
+    animation-delay: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.fullText{
+    display: inline-flex;
+    inline-size: max-content;
+    width: max-content;
+}
+
+.btnSubmit{
+    text-transform: uppercase;
+    margin: 0.5em;
+    float: right;
+    font-size: 15px;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
+    padding-left: 1em;
+    padding-right: 1em;
+    color: blueviolet;
+    border-radius: 45px;
+    border: 1px solid blueviolet;
+    background: lavender;
+}
+
+.btnSubmit:hover{
+    box-shadow: 0px 1px 1px 0px #dadada;
+}
+
+.redDel{
+    color: red;
+    border-color: red;
+    background: lightcoral;
+}
+
+.linkItem, .openView, .btnSubmit{
+    cursor: pointer;
+}
+
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+}
+
+.formSearch{
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.header > .formSearch > .inputSearch{
+    height: 35px;
+    width: 250px;
+    outline: none;
+    font-size: 25px;
+    border: none;
+}
+
+.header > .formSearch > .btnSearch{
+    margin: 0;
+    padding: 0;
+    width: 50px;
+    height: 35px;
+    position: absolute;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.header > .formSearch > .btnSearch > span{
+    margin: 0;
+    padding: 0;
+    width:  30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid blueviolet;
+    background: lavender;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header > .formSearch > .btnSearch > span:hover{
+    box-shadow: 0px 1px 1px 0px #dadada;
+}
+
+.header > .formSearch > .btnSearch > span > i{
+    color: blueviolet;
+}
+
+.filterSelector{
+    width: 100%;
+}
+
+.filterSelector > .listFilter{
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    display: flex;
+    overflow: auto;
+    white-space: nowrap;
+    list-style: none;
+}
+
+.filterSelector > .listFilter > .listFilterClear{
+    padding-left: 1em;
+    padding-right: 1em;
+    border: 1px solid blueviolet;
+    background-color: lavender;
+    color: blueviolet;
+}
+
+.filterSelector > .listFilter > .listFilterActive{
+    border: 1px solid blueviolet;
+    background-color: lavender;
+    color: blueviolet; 
+}
+
+.filterSelector > .listFilter > li{
+    text-transform: capitalize;
+    margin-left: 5px;
+    margin-right: 5px;
+    border: 1px solid whitesmoke;
+    border-radius: 25px;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.filterSelector > .listFilter > li:hover{
+    box-shadow: 0px 1px 1px 0px #dadada;
+}
+
+.main{
+    overflow: hidden;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-bottom: 50px;
+}
+
+@keyframes sadColor{
+    0%{
+        color:  #333;
+        background: darkgrey;
+        border-color: #333;
+    }
+    25%{
+        color: blueviolet;
+        background: lavender;
+        border-color: blueviolet;
+    }
+    50%{
+        color: lightseagreen;
+        background: lightgreen;
+        border-color: lightseagreen;
+        
+    }
+    75%{
+        color: blueviolet;
+        background: lavender;
+        border-color: blueviolet;
+    }
+    100%{
+        color:  #333;
+        background: darkgrey;
+        border-color: #333;
+    }
+}
+
+.sad{
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+}
+
+.sad > i{
+    color:  #333;
+    background: darkgrey;
+    border-color: #333;
+    animation: sadColor;
+    animation-delay: 10s;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    padding: 0.5em;
+    border-radius: 100%;
+    border: 1.5px solid;
+    margin: 0.5em;
+    font-size: 50px;
+}
+
+.view{
+    display: none;
+}
+
+
+.view > .closeViewArea{
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    background: #33333354;
+}
+
+.view > .mainView{
+    overflow-y: scroll;
+    bottom: 0;
+    width: 100%;
+    width: -moz-available;          /* WebKit-based browsers will ignore this. */
+    width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+    width: fill-available;
+    height: calc(100% - 20%);
+    margin-bottom: 40px;
+    padding: 1em;
+    position: fixed;
+    background-color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    box-shadow: 0 -1px 20px 0px #00000024;
+}
+
+.view > .mainView > div > form > .itemViewRow {
+    padding-bottom: 1em;
+    padding-top: 1em;
+}
+
+.view > .mainView > div > form > .itemViewRow > .nameItem{
+    font-size: 35px;
+    font-weight: bold;
+}
+
+/* per mettere il campo position in alto a destra */
+.view > .mainView > div > form > .itemViewRow:nth-child(1) > span:nth-child(2) { 
+    float: right;
+}
+
+.view > .mainView > div > form > .itemViewRow > .typeItem{
+    text-transform: capitalize;
+    margin-left: 5px;
+    margin-right: 5px;
+    border: 1px solid blueviolet;
+    background-color: lavender;
+    color: blueviolet;     border-radius: 25px;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.view > .mainView > div > form > .itemViewRow > .input{
+    font-size: 25px;
+    border: none;
+    outline: none;
+}
+
+.view > .mainView > div > form > .itemViewRow > .inputTextarea{
+    width: 100%;
+    font-size: 25px;
+    border: none;
+    outline: none;
+}
+
+.row{
+    display: flex;
+    align-items: center;
+    height: 75px;
+    padding-left: 1em;
+    padding-right: 1em;
+    border-right: 1px solid whitesmoke;
+    border-left: 1px solid whitesmoke;
+    border-bottom: 1px solid whitesmoke;
+}
+
+.row:first-child{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-top: 1px solid whitesmoke;
+    border-bottom: 1px solid whitesmoke;
+}
+
+.row:last-child{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top: none;
+}
+
+.row:hover{
+    box-shadow: 0 0 5px 0px #dadada;
+}
+
+.row > div {
+    float: left;
+    overflow: hidden;
+    width: calc(100% - 45px);
+}
+
+.row > div > .nameItem{
+    font-size: larger;
+    font-weight: bold;
+}
+
+.row > div > .descItem{
+    font-size: small;
+}
+
+.row > .quantityItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: inherit;
+    width: fit-content;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+}
+
+.row > .quantityItem > span {
+    margin-right: 1em;
+    margin-left: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid #3333333d;
+    background-color: whitesmoke;
+}
+
+.row > .input, .row > .inputSelect{
+    margin-top: 1em;
+    margin-bottom: 1em;
+    font-size: 25px;
+    width: 100%;
+    border: none;
+    outline: none;
+}
+
+.row > .inputSelect, .row > div > form > .inputSelect{
+    opacity: 0.5;
+}
+
+.rowOptGroup{
+    align-items: center;
+    padding: 1em;
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
+    border-top: 1px solid whitesmoke;
+    border-bottom: 1px solid whitesmoke;
+    border-right: 1px solid whitesmoke;
+    border-left: 1px solid whitesmoke;
+    border-bottom: 1px solid whitesmoke;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+}
+
+.rowOptGroup > .rowOpt{
+    height: 75px;
+    display: flex;
+}
+
+.rowOptGroup > .rowOpt > div{
+    width: 100%;
+    margin-left: 1em;
+}
+
+.rowOptGroup > .rowOpt > div > .nameItem {
+    font-weight: bold;
+}
+
+.rowOptGroup > .rowOpt > div > form{
+    width: -webkit-fill-available;
+    margin-block-end: 0;
+}
+
+.rowOptGroup > .rowOpt > div > form > .inputSelect{
+    margin-top: 0.5em;
+    font-size: 15px;
+    width: 100%;
+    border: none;
+    outline: none;
+}
+
+.navBottom{
+    z-index: 999999;
+    background: white;
+    box-shadow: -1px 0 1px 0px #dadada;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+}
+
+.navBottom > nav {
+    display: contents;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    height: 50px;
+}
+
+.navBottom > nav > .navItem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    font-size: 20px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.navBottom > nav > .activeNav{
+    border-radius: 50%;
+    border: 1px solid blueviolet;
+    background-color: lavender;
+    color: blueviolet;
+}

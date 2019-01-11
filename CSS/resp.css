@@ -1,0 +1,81 @@
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    
+    .formSearch{
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+    
+    .header > .formSearch > .btnSearch{
+        right: 6px;
+    }
+    
+    .row > .quantityItem {
+        right: 0%;
+    }
+} 
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    
+    .formSearch{
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+    
+    .header > .formSearch > .btnSearch{
+        right: 6px;
+    }
+    
+    .row > .quantityItem {
+        right: 0%;
+    }    
+} 
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) { 
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+        
+    .formSearch{
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+
+    .header > .formSearch > .btnSearch{
+        right: 20.5%;
+    }
+    
+    .filterSelector > .listFilter{
+        margin-right: 15%;
+        margin-left: 15%;
+    }
+    
+    .main{
+        margin-left: 15%;
+        margin-right: 15%;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+    
+        
+    .view > .mainView{
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    
+    
+    .row > .quantityItem {
+        right: 20%;
+    }
+} 
+
+/* Large devices (laptops/desktops, 1200px and down) */
+@media only screen and (max-width: 1200px) {
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+}
