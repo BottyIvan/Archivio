@@ -8,31 +8,16 @@ body{
     margin: 0;
     padding: 0;
     background: white;
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     color: #333;
 }
 
 @keyframes loader {
-    0%{
-        left: -5px;
+    from{
         width: 5px;
-    }
-    25%{
-        left: 0;
-        width: 25%;
-    }
-    50%{
-        left: 25%;
-        width: 100%;
-        right: 25%;
-    }
-    75%{
-        right: 25%;
-        width: 25%;
-    }
-    100%{
-        right: -5px;
-        width: 5px;   
+    }   
+    to{
+        width: 100%;   
     }
 }
 
@@ -144,7 +129,7 @@ body{
 
 .header > .formSearch > .inputSearch{
     height: 35px;
-    width: 250px;
+    width: calc(100% - 50px);
     outline: none;
     font-size: 25px;
     border: none;
@@ -455,7 +440,8 @@ body{
 }
 
 .rowOptGroup > .rowOpt{
-    height: 75px;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
     display: flex;
 }
 

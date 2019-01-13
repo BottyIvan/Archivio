@@ -9,6 +9,9 @@
         <span class="navItem linkItem <?if($page=="settings") echo "activeNav";?>" data-link="<?=INDEX?>/include/settings.php">
             <i class="fas fa-cog"></i>
         </span>
+        <span class="navItem linkItem <?if($page=="logout") echo "activeNav";?>" data-link="<?=INDEX?>/logout.php">
+            <i class="fas fa-sign-out-alt"></i>
+        </span>
     </nav>
 </footer>
 <?php $conn->close(); ?>

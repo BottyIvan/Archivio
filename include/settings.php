@@ -7,6 +7,14 @@
                 <label class="nameItem"><?=$stringOptUser?></label>
                 <br>
                 <summary>
+                    <?
+                    $query = "SELECT * FROM admin WHERE username LIKE '".$_SESSION['login_user']."'";
+                    $result = $conn->query($query);
+                    if ($result->num_rows > 0) {
+                        $row = $result->fetch_assoc();
+                        echo ucfirst($row["cognome"])." ".ucfirst($row["nome"]);
+                    }
+                    ?>
                 </summary>
             </div>
         </div>
@@ -35,6 +43,15 @@
                         <option value="pink" <?if($colorPrefUI=="pink") echo "selected";?>>Pink</option>
                     </select>
                 </form>
+            </div>
+        </div>
+    </div>
+    <div class="rowOptGroup">
+        <div class="rowOpt linkItem" data-link="../LICENSE">
+            <i class="fas fa-copyright"></i>
+            <div>
+                <label class="nameItem">Apache License</label>
+                <summary>ivanbotty.cloud &copy; <?=date('Y')?></summary>
             </div>
         </div>
     </div>

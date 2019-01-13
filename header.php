@@ -1,7 +1,7 @@
 <?
 include("pref/DIR.php");
 include("CORE/conn.php");
-session_start();
+include("session.php");
 if($_REQUEST['init']==1){
     $search = "%";
     $typeFilter = "%";
@@ -44,15 +44,14 @@ if($_SESSION["debug"]=="true" OR $_REQUEST["debug"]=="true"){
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-        <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         <link href="<?=CSS_DIR?>/style.css" rel="stylesheet" media="all">
         <link href="<?=CSS_DIR?>/resp.css" rel="stylesheet" media="all">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquerykeyframes/0.0.9/jquery.keyframes.js"></script>
         <script src="<?=JS_DIR?>/main.js" type="text/javascript"></script>
     </head>
     <?
-    $query = "SELECT * FROM archive WHERE name LIKE '%$search%' AND type LIKE '%$typeFilter%' ORDER BY priority";
+    $query = "SELECT * FROM archive WHERE available='true' AND name LIKE '%$search%' AND type LIKE '%$typeFilter%' ORDER BY id DESC";
     $result = $conn->query($query);
     ?>
     <body>

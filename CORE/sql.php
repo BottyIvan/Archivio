@@ -44,7 +44,7 @@ if($operation=="edit"){
 }
 
 if($operation=="del"){
-    $queryDel= "DELETE FROM archive WHERE id=$id";
+    $queryDel= "UPDATE archive SET available='false' WHERE id=$id";
     
     if ($conn->query($queryDel) != TRUE) {
         echo "Error: " . $sql . "<br>" . $conn->error;

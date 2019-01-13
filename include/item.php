@@ -94,9 +94,8 @@ include("../CORE/strings.php");
     <button class="btnSubmit" type="button" onclick="document.editItemFrom.submit();">
         <i class="fas fa-save"></i>&nbsp;<?=$stringBtnSubmit?>
     </button>
-    <!--
     <button class="btnSubmit redDel" type="button" onclick="location.href='CORE/sql.php?operation=del&id=<?=$row["id"]?>'">
         <i class="fas fa-trash"></i>&nbsp;<?=$stringBtnDel?>
-    </button> -->
+    </button>
 </div>
 <?}$conn->close(); ?>
