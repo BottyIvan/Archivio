@@ -29,6 +29,9 @@ if($lang=="eng") {
     $stringOptUser = "User";
     $stringOptLang = "Language";
     $stringOptColorUI = "Choose color accent";
+    
+    // user settings
+    $stringOptPsw = "Password";
 } elseif($lang=="ita") {
     // home app
     $stringSearch = "Cerca";
@@ -59,5 +62,8 @@ if($lang=="eng") {
     $stringOptUser = "Utenza";
     $stringOptLang = "Lingua";
     $stringOptColorUI = "Scegli il colore";
+
+    // user settings
+    $stringOptPsw = "Password";
 }
 ?>

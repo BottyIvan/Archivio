@@ -3,6 +3,7 @@ $(document).ready(function () {
     var body = $('body'),
         linkItem = $('.linkItem'),
         openView = $('.openView'),
+        openViewOption = $('.openViewOption'),
         fullText = $('.fullText'),
         view = $('.view'),
         closeViewArea = $('.closeViewArea'),
@@ -43,6 +44,13 @@ $(document).ready(function () {
         setTimeout(function(){
             openViewUI(link);
         }, 450);
+    });
+    
+    openViewOption.click(function(){
+        var link = $(this).attr('data-link');
+        view.show();
+        mainView.load(link);
+        mainView.addClass('fadeInElement').removeClass('hidden');
     });
     
     $(closeViewArea).click(function(){

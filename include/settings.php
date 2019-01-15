@@ -1,7 +1,7 @@
 <? include ("../header.php");?>
 <section class="main">
     <div class="rowOptGroup">
-        <div class="rowOpt">
+        <div class="rowOpt linkItem" data-link="user.php">
             <i class="fas fa-user-circle"></i>
             <div>
                 <label class="nameItem"><?=$stringOptUser?></label>

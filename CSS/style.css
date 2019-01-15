@@ -83,6 +83,20 @@ body{
     width: max-content;
 }
 
+.userIcon {
+    width: 30px !important;
+    height: 30px !important;
+    background-size: cover !important;
+    border-radius: 50%;
+}
+
+.userIconFull{
+    width: 100px;
+    height: 100px;
+    background-size: cover !important;
+    border-radius: 50%;
+}
+
 .btnSubmit{
     text-transform: uppercase;
     margin: 0.5em;
@@ -448,6 +462,12 @@ body{
 .rowOptGroup > .rowOpt > div{
     width: 100%;
     margin-left: 1em;
+}
+
+.rowOptGroup > .rowOpt > div > div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .rowOptGroup > .rowOpt > div > .nameItem {
