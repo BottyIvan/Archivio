@@ -4,12 +4,34 @@
 + V 1.0
 */
 
+input:-internal-autofill-previewed, input:-internal-autofill-selected, textarea:-internal-autofill-previewed, textarea:-internal-autofill-selected, select:-internal-autofill-previewed, select:-internal-autofill-selected {
+    background-color: whitesmoke !important;
+}
+
 body{
     margin: 0;
     padding: 0;
     background: white;
     font-family: 'Open Sans', sans-serif;
     color: #333;
+}
+
+.green > .navBottom > nav > .activeNav {
+    color: lightseagreen;
+}
+
+.green > .navBottom > nav > .activeNav::after {
+    background-color: lightseagreen;
+}
+
+.green > .filterSelector > .listFilter > .listFilterActive, .green > .filterSelector > .listFilter > .listFilterClear, .green > .header > .formSearch > .btnSearch > span, .green > .header > .formSearch > .btnSearch > span > i, .green > .loader::after, .green > .view > .mainView > div > form > .itemViewRow > .typeItem, .green > .view > .mainView > div > form > .editItem > .itemViewRow > .typeItem{
+    border-color: lightseagreen;
+    background-color: lightgreen;
+    color: lightseagreen;
+}
+
+.loadingMore{
+    display: none;
 }
 
 @keyframes loader {
@@ -25,7 +47,7 @@ body{
     top: 0;
     content: '';
     position: absolute;
-    height: 5px;
+    height: 3px;
     width: 5px;
     background-color: blueviolet;
     z-index: 9999999999;
@@ -97,6 +119,10 @@ body{
     border-radius: 50%;
 }
 
+.saveEditItem, .redDel{
+    display: none;
+}
+
 .btnSubmit{
     text-transform: uppercase;
     margin: 0.5em;
@@ -134,12 +160,63 @@ body{
     width: 100%;
 }
 
+.fixedToolBar{
+    position: fixed;
+    background: white;
+    right: 25%;
+    left: 25%;
+    padding: 1%;
+    margin-top: -1em;
+    box-shadow: 0 1px 5px 0px #33333342;
+    -webkit-transition: height 0.4s; /* For Safari 3.1 to 6.0 */
+    transition: height 0.4s;
+}
+
+.fixedBar{
+    z-index: 999999999999999;
+    position: fixed;
+    background: white;
+    width: calc(100% - 40%) !important;
+    border: 1px solid whitesmoke;
+    border-radius: 5px;
+    box-shadow: 0px 5px 20px 0px #33333314;
+    padding: 0.5em !important;
+    margin-top: 0.5em !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-bottom: 0 !important;
+    -webkit-transition: height 0.4s; /* For Safari 3.1 to 6.0 */
+    transition: height 0.4s;
+}
+
+.header > .fixedBar > .btnSearch {
+    right: 15px !important;
+
+}
+
 .formSearch{
     margin-bottom: 0;
-    margin-top: 0;
+    margin-top: 0.5em;
     padding: 0;
     width: 100%;
+    -webkit-transition: height 0.4s; /* For Safari 3.1 to 6.0 */
+    transition: height 0.4s;
 }
+
+.formSearch:hover{
+    width: calc(100% - 40%) !important;
+    border: 1px solid whitesmoke;
+    border-radius: 5px;
+    box-shadow: 0px 1px 5px 0px #33333314;
+    padding: 0.5em !important;
+    margin-top: 0.5em !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-bottom: 0 !important;
+    -webkit-transition: height 0.4s;
+    transition: height 0.4s;
+}
+
 
 .header > .formSearch > .inputSearch{
     height: 35px;
@@ -298,14 +375,15 @@ body{
     background: #33333354;
 }
 
-.view > .mainView{
+.view > .mainViewOption{
     overflow-y: scroll;
+    overflow-x: hidden;
     bottom: 0;
     width: 100%;
     width: -moz-available;          /* WebKit-based browsers will ignore this. */
     width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
     width: fill-available;
-    height: calc(100% - 20%);
+    height: fit-content;
     margin-bottom: 40px;
     padding: 1em;
     position: fixed;
@@ -315,22 +393,75 @@ body{
     box-shadow: 0 -1px 20px 0px #00000024;
 }
 
-.view > .mainView > div > form > .itemViewRow {
+.view > .mainViewOption > .main{
+    overflow: hidden;
+    padding: 0px;
+    margin: 0px;
+}
+
+.view > .mainView{
+    overflow-y: scroll;
+    overflow-x: hidden;
+    bottom: 0;
+    width: 100%;
+    width: -moz-available;          /* WebKit-based browsers will ignore this. */
+    width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+    width: fill-available;
+    max-height: calc(100% - 200px);
+    margin-bottom: 50px;
+    padding: 1em;
+    position: fixed;
+    background-color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    box-shadow: 0 -1px 20px 0px #00000024;
+}
+
+.view > .mainView > div > form > .itemViewRow, .view > .mainView > div > form > .editItem > .itemViewRow  {
     padding-bottom: 1em;
     padding-top: 1em;
 }
 
-.view > .mainView > div > form > .itemViewRow > .nameItem{
+.view > .mainView > div > form > .editItem{
+    display: none;
+}
+
+.view > .mainView > div > form > .itemViewRow > .nameItem, .view > .mainView > div > form > .editItem > .itemViewRow > .nameItem{
     font-size: 35px;
     font-weight: bold;
 }
 
+.view > .mainView > div > form > .itemViewRow > .listItemPhoto{
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-inline-start: 0;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
+    list-style: none;
+    display: flex;
+    overflow: auto;
+    white-space: nowrap;
+    list-style: none;
+}
+
+.view > .mainView > div > form > .itemViewRow > .listItemPhoto > .listItem{
+    margin-left: 5px;
+    margin-right: 5px;
+} 
+
+.view > .mainView > div > form > .itemViewRow > .listItemPhoto > .listItem > img{
+    width: inherit;
+    border-radius: 5px;
+    border: 1px solid whitesmoke;
+}
+
+
 /* per mettere il campo position in alto a destra */
-.view > .mainView > div > form > .itemViewRow:nth-child(1) > span:nth-child(2) { 
+.view > .mainView > div > form > .itemViewRow:nth-child(1) > span:nth-child(2), .view > .mainView > div > form > .editItem > .itemViewRow:nth-child(1) > span:nth-child(2)  { 
     float: right;
 }
 
-.view > .mainView > div > form > .itemViewRow > .typeItem{
+.view > .mainView > div > form > .itemViewRow > .typeItem, .view > .mainView > div > form > .editItem > .itemViewRow > .typeItem{
     text-transform: capitalize;
     margin-left: 5px;
     margin-right: 5px;
@@ -343,13 +474,18 @@ body{
     padding-right: 1em;
 }
 
-.view > .mainView > div > form > .itemViewRow > .input{
+.view > .mainView > div > form > .itemViewRow > .input, .view > .mainView > div > form > .editItem > .itemViewRow > .input, .rowOptGroup > .rowOpt > div > form > div > input{
     font-size: 25px;
     border: none;
     outline: none;
 }
 
-.view > .mainView > div > form > .itemViewRow > .inputTextarea{
+.rowOptGroup > .rowOpt > div > form > div > input{
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.view > .mainView > div > form > .itemViewRow > .inputTextarea, .view > .mainView > div > form > .editItem > .itemViewRow > .inputTextarea{
     width: 100%;
     font-size: 25px;
     border: none;
@@ -464,7 +600,7 @@ body{
     margin-left: 1em;
 }
 
-.rowOptGroup > .rowOpt > div > div{
+.rowOptGroup > .rowOpt > div > div, .rowOptGroup > .rowOpt > div > form > div{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -522,8 +658,16 @@ body{
 }
 
 .navBottom > nav > .activeNav{
-    border-radius: 50%;
-    border: 1px solid blueviolet;
-    background-color: lavender;
     color: blueviolet;
+}
+
+.navBottom > nav > .activeNav::after{
+    content: '';
+    height: 3px;
+    width: 45px;
+    bottom: 0;
+    position: absolute;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    background-color: blueviolet;
 }

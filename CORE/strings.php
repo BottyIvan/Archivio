@@ -32,6 +32,9 @@ if($lang=="eng") {
     
     // user settings
     $stringOptPsw = "Password";
+    
+    // general ui
+    $confirmAlert = "Are you sure ?";
 } elseif($lang=="ita") {
     // home app
     $stringSearch = "Cerca";
@@ -65,5 +68,44 @@ if($lang=="eng") {
 
     // user settings
     $stringOptPsw = "Password";
+
+    // general ui
+    $confirmAlert = "Sei sicuro ?";
+} elseif($lang=="es"){
+    // home app
+    $stringSearch = "Búsqueda";
+    $noItem = "No se encontraron piezas.";
+    
+    // add item title
+    $stringAddItem = "Añadir una pieza";
+    
+    // name of all parms
+    $stringName = "Nombre";
+    $stringType = "Tipo";
+    $stringQuantity = "Cantidad";
+    $stringPriority = "Prioridad";
+    $stringLength = "Longitud";
+    $stringHigh = "Altura";
+    $stringWidth = "Ancho";
+    $stringDepth = "Profundidad";
+    $stringColor = "Color";
+    $stringMaterial = "Material";
+    $stringPosition = "Ubicación";
+    $stringDescription = "Descripción";
+    
+    // botton
+    $stringBtnSubmit = "guardar";
+    $stringBtnDel = "borra";
+
+    // string option ui
+    $stringOptUser = "Usuarios";
+    $stringOptLang = "Idioma";
+    $stringOptColorUI = "Elige el color";
+
+    // user settings
+    $stringOptPsw = "Contraseña";
+
+    // general ui
+    $confirmAlert = "¿Estas seguro ?";
 }
 ?>

@@ -1,12 +1,13 @@
+<? include("pref/DIR.php"); ?>
 <section class="main">
     <div class="rowOptGroup">
-        <div class="rowOpt linkItem" data-link="/include/user.php">
-            user
-        </div>
+        <button class="rowOpt" onclick="location.href='<?=INDEX?>/include/user.php'">
+            User
+        </button>
     </div>
     <div class="rowOptGroup">
-        <div class="rowOpt linkItem" data-link="logout.php">
+        <button class="rowOpt" onclick="location.href='<?=INDEX?>/logout.php'">
             logout
-        </div>
+        </button>
     </div>
 </section>

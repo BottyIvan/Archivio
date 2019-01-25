@@ -1,6 +1,7 @@
 $(document).ready(function () { 
 
     var body = $('body'),
+        formSearch = $('.formSearch'),
         linkItem = $('.linkItem'),
         openView = $('.openView'),
         openViewOption = $('.openViewOption'),
@@ -24,6 +25,32 @@ $(document).ready(function () {
         addScrollText();
     });
     
+    $(window).on('scroll',function(){
+        if($(window).scrollTop() > 50) formSearch.addClass('fixedBar');
+        else formSearch.removeClass('fixedBar');
+        
+       /*
+       not ready
+        var idOld = 0;
+        var idItem = $('.loadingMore').attr('fetch-data');
+        if((($(window).scrollTop() == $(document).height()) - $(window).height()) && (idOld != idItem)){
+            $.ajax({
+                type: 'POST',
+                url: '../archivio/CORE/fetch_data.php',
+                data: 'id='+idItem,
+                beforeSend:function(){
+                    $('.loadingMore').show();
+                },
+                success:function(html){
+                    $('.loadingMore').remove();
+                    $('.main').append(html);
+                }
+            });
+        }
+        idOld = idItem;
+        console.log(idOld);
+        */
+    });
     
     //link to another page like href
     linkItem.click(function(){
@@ -50,6 +77,7 @@ $(document).ready(function () {
         var link = $(this).attr('data-link');
         view.show();
         mainView.load(link);
+        mainView.addClass('mainViewOption').removeClass('mainView');
         mainView.addClass('fadeInElement').removeClass('hidden');
     });
     
@@ -70,6 +98,7 @@ $(document).ready(function () {
         setTimeout(function(){
             body.removeClass('loader').removeClass('fixed');
             mainView.addClass('hidden').removeClass('fadeOutElement');
+            mainView.addClass('mainView').removeClass('mainViewOption');
             $(view).hide();
             }, 450);
     }

@@ -20,7 +20,9 @@
 <section class="main">
     <?
     if ($result->num_rows > 0) {
-        while($row = $result->fetch_assoc()) {?>
+        while($row = $result->fetch_assoc()) {
+            $last_id = $row["id"];
+            ?>
             <div class="row openView" data-link="<?="include/item.php?id=".$row["id"]?>">
                 <div>
                     <span class="nameItem fullText"><?=$row["name"]?></span>
@@ -29,16 +31,11 @@
                 </div>
                 <span class="quantityItem"><span><?=$row["quantity"]?></span></span>
             </div>
-        <?
-        }
+    <?}
     } else { ?>
       <span class="sad"><i class="fas fa-frown"></i><br><?=$noItem?></span>
     <?
     }
     ?>
-</section>
-<section class="view">
-    <div class="closeViewArea"></div>
-    <div class="mainView hidden"></div>
 </section>
 <? include ("footer.php");?>

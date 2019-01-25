@@ -1,3 +1,7 @@
+<section class="view">
+    <div class="closeViewArea"></div>
+    <div class="mainView hidden"></div>
+</section>
 <footer class="navBottom">
     <?
     $photoQuery = "SELECT * FROM admin WHERE username LIKE '".$_SESSION['login_user']."'";
@@ -17,9 +21,11 @@
         if ($photoResult->num_rows > 0) {
             $photo = $photoResult->fetch_assoc();
             ?>
-            <span class="navItem userIcon openViewOption <?if($page=="logout") echo "activeNav";?>" style="background: url(<?=INDEX."/user/".$photo['photo']?>)" data-link="..<?=INDEX?>/menu_sheet.php">
+            <span class="navItem userIcon openViewOption <?if($page=="logout") echo "activeNav";?>" style="background: url(<?=INDEX."/user/".$photo['photo']?>)" data-link="<?=INDEX?>/menu_sheet.php">
             </span>
         <?}?>
     </nav>
 </footer>
 <?php $conn->close(); ?>
+</body>
+</html>

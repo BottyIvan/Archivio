@@ -2,12 +2,22 @@
 @media only screen and (max-width: 600px) {
     
     .formSearch{
-        margin-left: 1em;
-        margin-right: 1em;
+        width: calc(100% - 10%) !important;
     }
     
     .header > .formSearch > .btnSearch{
-        right: 6px;
+        right: 0px !important;
+    }
+    
+    .view > .mainView > div > form > .itemViewRow > .listItemPhoto > .listItem{
+        width: 200px;
+        height: 200px;
+    }
+    
+    .fixedToolBar{
+        right: 0;
+        left: 0;
+        
     }
     
     .row > .quantityItem {
@@ -60,12 +70,26 @@
         padding-right: 5%;
     }
     
-        
-    .view > .mainView{
-        margin-left: 10%;
-        margin-right: 10%;
+    .view > .mainViewOption{
+        margin-left: 35%;
+        margin-right: 35%;
     }
     
+    .view > .mainViewOption > .main{
+        overflow: hidden;
+        padding: 0px;
+        margin: 0px;
+    }
+    
+    .view > .mainView{
+        margin-left: 25%;
+        margin-right: 25%;
+    }
+    
+    .view > .mainView > div > form > .itemViewRow > .listItemPhoto > .listItem{
+        width: 250px;
+        height: 250px;
+    }
     
     .row > .quantityItem {
         right: 20%;

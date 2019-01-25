@@ -1,6 +1,6 @@
 <? include ("../header.php");?>
 <section class="main">
-    <form method="post" action="../CORE/sql.php?operation=add" id="addItemForm" name="addItemForm">
+    <form method="post" action="../CORE/sql.php?operation=add" id="addItemForm" name="addItemForm" enctype="multipart/form-data">
         <div class="row">
             <input type="text" class="input" name="name" placeholder="<?=$stringName?>">
         </div>
@@ -48,6 +48,9 @@
         </div>
         <div class="row">
             <input type="text" class="input" name="description" placeholder="<?=$stringDescription?>">
+        </div>
+        <div class="row">
+            <input type="file" name="itemPhoto" id="itemPhoto">
         </div>
     </form>
     <button class="btnSubmit" type="button" onclick="document.addItemForm.submit();">

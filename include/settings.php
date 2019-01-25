@@ -29,6 +29,7 @@
                     <select class="inputSelect" name="lang" id="lang" onchange="document.lang_form.submit();">
                         <option value="ita" <?if($lang=="ita") echo "selected";?>>Italiano</option>
                         <option value="eng" <?if($lang=="eng") echo "selected";?>>English</option>
+                        <option value="es" <?if($lang=="es") echo "selected";?>>Espagnol</option>
                     </select>
                 </form>
             </div>
@@ -40,14 +41,15 @@
                 <br>
                 <form name="color_form" id="color_form" method="post">
                     <select class="inputSelect" name="color_pref" id="color_pref" onchange="document.color_form.submit();">
-                        <option value="pink" <?if($colorPrefUI=="pink") echo "selected";?>>Pink</option>
+                        <option value="pink" <?if($color=="pink") echo "selected";?>>Pink</option>
+                        <option value="green" <?if($color=="green") echo "selected";?>>Green</option>
                     </select>
                 </form>
             </div>
         </div>
     </div>
     <div class="rowOptGroup">
-        <div class="rowOpt linkItem" data-link="../LICENSE">
+        <div class="rowOpt openView" data-link="../LICENSE">
             <i class="fas fa-copyright"></i>
             <div>
                 <label class="nameItem">Apache License</label>
