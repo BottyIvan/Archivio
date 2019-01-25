@@ -45,6 +45,10 @@ include("../CORE/strings.php");
                 </ul>
             </div>
         <?}?>
+        <div class="itemViewRow">
+            <span><?=$stringQuantity?>&nbsp;:&nbsp;</span><span id="quantityChange"></span>
+            <div class="slider" item-id="<?=$row["id"]?>" item-quantity="<?=$row["quantity"]?>"></div>
+        </div>
         <? if($row["description"]!=""){?>
         <div class="itemViewRow">
             <?=$row["description"]?>

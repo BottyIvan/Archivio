@@ -17,7 +17,6 @@
     .fixedToolBar{
         right: 0;
         left: 0;
-        
     }
     
     .row > .quantityItem {
@@ -44,6 +43,24 @@
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) { 
+
+    .formSearch{
+        width: calc(100% - 10%) !important;
+    }
+    
+    .header > .formSearch > .btnSearch{
+        right: 0px !important;
+    }
+    
+    .fixedToolBar{
+        right: 0;
+        left: 0;
+    }
+    
+    .view > .mainView > div > form > .itemViewRow > .listItemPhoto > .listItem{
+        width: 250px;
+        height: 250px;
+    }
 } 
 
 /* Large devices (laptops/desktops, 992px and up) */
@@ -84,6 +101,11 @@
     .view > .mainView{
         margin-left: 25%;
         margin-right: 25%;
+    }
+    
+    .fixedToolBar{
+        right: 25%;
+        left: 25%;
     }
     
     .view > .mainView > div > form > .itemViewRow > .listItemPhoto > .listItem{

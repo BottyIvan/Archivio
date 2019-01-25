@@ -62,7 +62,10 @@ if($_SESSION["debug"]=="true" OR $_REQUEST["debug"]=="true"){
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         <link href="<?=CSS_DIR?>/style.css" rel="stylesheet" media="all">
         <link href="<?=CSS_DIR?>/resp.css" rel="stylesheet" media="all">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link href="<?=CSS_DIR?>/colors.css" rel="stylesheet" media="all">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
         <script src="<?=JS_DIR?>/main.js" type="text/javascript"></script>
     </head>
     <?

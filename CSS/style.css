@@ -16,18 +16,8 @@ body{
     color: #333;
 }
 
-.green > .navBottom > nav > .activeNav {
-    color: lightseagreen;
-}
-
-.green > .navBottom > nav > .activeNav::after {
-    background-color: lightseagreen;
-}
-
-.green > .filterSelector > .listFilter > .listFilterActive, .green > .filterSelector > .listFilter > .listFilterClear, .green > .header > .formSearch > .btnSearch > span, .green > .header > .formSearch > .btnSearch > span > i, .green > .loader::after, .green > .view > .mainView > div > form > .itemViewRow > .typeItem, .green > .view > .mainView > div > form > .editItem > .itemViewRow > .typeItem{
-    border-color: lightseagreen;
-    background-color: lightgreen;
-    color: lightseagreen;
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active{
+    border-radius: 50%;
 }
 
 .loadingMore{
@@ -132,10 +122,8 @@ body{
     padding-top: 0.5em;
     padding-left: 1em;
     padding-right: 1em;
-    color: blueviolet;
     border-radius: 45px;
-    border: 1px solid blueviolet;
-    background: lavender;
+    border: 1px solid;
 }
 
 .btnSubmit:hover{
@@ -143,9 +131,9 @@ body{
 }
 
 .redDel{
-    color: red;
-    border-color: red;
-    background: lightcoral;
+    color: red !important;
+    border-color: red !important;
+    background: lightcoral !important;
 }
 
 .linkItem, .openView, .btnSubmit{
@@ -243,8 +231,7 @@ body{
     width:  30px;
     height: 30px;
     border-radius: 50%;
-    border: 1px solid blueviolet;
-    background: lavender;
+    border: 1px solid;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -252,10 +239,6 @@ body{
 
 .header > .formSearch > .btnSearch > span:hover{
     box-shadow: 0px 1px 1px 0px #dadada;
-}
-
-.header > .formSearch > .btnSearch > span > i{
-    color: blueviolet;
 }
 
 .filterSelector{
@@ -278,15 +261,11 @@ body{
 .filterSelector > .listFilter > .listFilterClear{
     padding-left: 1em;
     padding-right: 1em;
-    border: 1px solid blueviolet;
-    background-color: lavender;
-    color: blueviolet;
+    border: 1px solid;
 }
 
 .filterSelector > .listFilter > .listFilterActive{
-    border: 1px solid blueviolet;
-    background-color: lavender;
-    color: blueviolet; 
+    border: 1px solid;
 }
 
 .filterSelector > .listFilter > li{
@@ -408,8 +387,10 @@ body{
     width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
     width: fill-available;
     max-height: calc(100% - 200px);
-    margin-bottom: 50px;
-    padding: 1em;
+    padding-bottom: 50px;
+    padding-top: 1em;
+    padding-right: 1em;
+    padding-left: 1em;
     position: fixed;
     background-color: white;
     border-top-left-radius: 10px;
@@ -465,9 +446,8 @@ body{
     text-transform: capitalize;
     margin-left: 5px;
     margin-right: 5px;
-    border: 1px solid blueviolet;
-    background-color: lavender;
-    color: blueviolet;     border-radius: 25px;
+    border: 1px solid;
+    border-radius: 25px;
     padding-bottom: 0.5em;
     padding-top: 0.5em;
     padding-left: 1em;
@@ -657,10 +637,6 @@ body{
     margin-right: 15px;
 }
 
-.navBottom > nav > .activeNav{
-    color: blueviolet;
-}
-
 .navBottom > nav > .activeNav::after{
     content: '';
     height: 3px;
@@ -669,5 +645,4 @@ body{
     position: absolute;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
-    background-color: blueviolet;
 }

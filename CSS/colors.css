@@ -1,0 +1,81 @@
+/*
+*
+* pink AKA deafult color
+*
+*/
+
+.pink > .navBottom > nav > .activeNav {
+    color: blueviolet;
+}
+
+.pink > .navBottom > nav > .activeNav::after {
+    background-color: blueviolet;
+}
+
+.pink > .filterSelector > .listFilter > .listFilterActive, .pink > .filterSelector > .listFilter > .listFilterClear, .pink > .header > .formSearch > .btnSearch > span, .pink > .header > .formSearch > .btnSearch > span > i, .pink > .loader::after, .pink > .view > .mainView > div > form > .itemViewRow > .typeItem, .pink > .view > .mainView > div > form > .editItem > .itemViewRow > .typeItem, .pink > .view > .mainView > div > .btnSubmit{
+    border-color: blueviolet;
+    background-color: lavender;
+    color: blueviolet;
+}
+
+/*
+*
+* GREEN 
+*
+*/
+
+.green > .navBottom > nav > .activeNav {
+    color: lightseagreen;
+}
+
+.green > .navBottom > nav > .activeNav::after {
+    background-color: lightseagreen;
+}
+
+.green > .filterSelector > .listFilter > .listFilterActive, .green > .filterSelector > .listFilter > .listFilterClear, .green > .header > .formSearch > .btnSearch > span, .green > .header > .formSearch > .btnSearch > span > i, .green > .loader::after, .green > .view > .mainView > div > form > .itemViewRow > .typeItem, .green > .view > .mainView > div > form > .editItem > .itemViewRow > .typeItem, .green > .view > .mainView > div > .btnSubmit{
+    border-color: lightseagreen;
+    background-color: #dcfddc;
+    color: lightseagreen;
+}
+
+
+/*
+*
+* Black & White
+*
+*/
+
+.bw > .navBottom > nav > .activeNav {
+    color: black;
+}
+
+.bw > .navBottom > nav > .activeNav::after {
+    background-color: black;
+}
+
+.bw > .filterSelector > .listFilter > .listFilterActive, .bw > .filterSelector > .listFilter > .listFilterClear, .bw > .header > .formSearch > .btnSearch > span, .bw > .header > .formSearch > .btnSearch > span > i, .bw > .loader::after, .bw > .view > .mainView > div > form > .itemViewRow > .typeItem, .bw > .view > .mainView > div > form > .editItem > .itemViewRow > .typeItem, .bw > .view > .mainView > div > .btnSubmit{
+    border-color: black;
+    background-color: white;
+    color: black;
+}
+
+
+/*
+*
+* Blue
+*
+*/
+
+.blue > .navBottom > nav > .activeNav {
+    color: cornflowerblue;
+}
+
+.blue > .navBottom > nav > .activeNav::after {
+    background-color: cornflowerblue;
+}
+
+.blue > .filterSelector > .listFilter > .listFilterActive, .blue > .filterSelector > .listFilter > .listFilterClear, .blue > .header > .formSearch > .btnSearch > span, .blue > .header > .formSearch > .btnSearch > span > i, .blue > .loader::after, .blue > .view > .mainView > div > form > .itemViewRow > .typeItem, .blue > .view > .mainView > div > form > .editItem > .itemViewRow > .typeItem, .blue > .view > .mainView > div > .btnSubmit{
+    border-color: cornflowerblue;
+    background-color: aliceblue;
+    color: cornflowerblue;
+}

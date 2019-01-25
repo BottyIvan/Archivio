@@ -43,6 +43,8 @@
                     <select class="inputSelect" name="color_pref" id="color_pref" onchange="document.color_form.submit();">
                         <option value="pink" <?if($color=="pink") echo "selected";?>>Pink</option>
                         <option value="green" <?if($color=="green") echo "selected";?>>Green</option>
+                        <option value="bw" <?if($color=="bw") echo "selected";?>>Black & White</option>
+                        <option value="blue" <?if($color=="blue") echo "selected";?>>Blue</option>
                     </select>
                 </form>
             </div>
