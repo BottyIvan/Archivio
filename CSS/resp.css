@@ -5,6 +5,10 @@
         width: calc(100% - 10%) !important;
     }
     
+    .formSearch:hover{
+        width: calc(100% - 10%) !important;
+    }
+    
     .header > .formSearch > .btnSearch{
         right: 0px !important;
     }
@@ -45,11 +49,11 @@
 @media only screen and (min-width: 768px) { 
 
     .formSearch{
-        width: calc(100% - 10%) !important;
+        width: calc(100% - 10%);
     }
     
     .header > .formSearch > .btnSearch{
-        right: 0px !important;
+        right: 0px;
     }
     
     .fixedToolBar{

@@ -37,7 +37,7 @@ if ($result->num_rows > 0) {
             <div class="rowOpt">
                 <i class="fas fa-pencil-ruler"></i>
                 <div>
-                    ROLE COMIG SOON: GOD
+                    <span><?=$stringOptRole?>&nbsp;:&nbsp;</span><?=$row["role"]?>
                 </div>
             </div>
         </div>

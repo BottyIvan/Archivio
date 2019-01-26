@@ -50,13 +50,17 @@ if($_SESSION["debug"]=="true" OR $_REQUEST["debug"]=="true"){
     <head>
         <title><?=$page?></title>
         <meta charset="utf-8">
+        <meta name="author" content="ivanbotty.cloud">
+        <meta name="application-name" content="An easy archive.">
+        <link rel="manifest" href="manifest.json">
+        <link rel="icon" href="images/icons/icon-384x384.png">
         <!-- apple ios app -->
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        <link rel="apple-touch-icon" href="icons/touch-icon-iphone-retina.png">
-        <link rel="apple-touch-icon" sizes="152x152" href="icons/touch-icon-ipad.png">
-        <link rel="apple-touch-icon" sizes="180x180" href="icons/touch-icon-iphone-retina.png">
-        <link rel="apple-touch-icon" sizes="167x167" href="icons/touch-icon-ipad-retina.png">
+        <link rel="apple-touch-icon" href="images/icons/icon-384x384.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="images/icons/icon-384x384.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="images/icons/icon-384x384.png">
+        <link rel="apple-touch-icon" sizes="167x167" href="images/icons/icon-384x384.png">
         <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,shrink-to-fit=no">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">

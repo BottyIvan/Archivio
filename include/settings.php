@@ -1,4 +1,9 @@
 <? include ("../header.php");?>
+<?
+$query = "SELECT * FROM admin WHERE username LIKE '".$_SESSION['login_user']."'";
+$result = $conn->query($query);
+$row = $result->fetch_assoc();
+?>
 <section class="main">
     <div class="rowOptGroup">
         <div class="rowOpt linkItem" data-link="user.php">
@@ -8,12 +13,7 @@
                 <br>
                 <summary>
                     <?
-                    $query = "SELECT * FROM admin WHERE username LIKE '".$_SESSION['login_user']."'";
-                    $result = $conn->query($query);
-                    if ($result->num_rows > 0) {
-                        $row = $result->fetch_assoc();
-                        echo ucfirst($row["cognome"])." ".ucfirst($row["nome"]);
-                    }
+                    echo ucfirst($row["cognome"])." ".ucfirst($row["nome"]);
                     ?>
                 </summary>
             </div>
@@ -50,6 +50,33 @@
             </div>
         </div>
     </div>
+    <?
+    if($row["role"]=="super"){
+    $query2 = "SELECT id FROM admin";
+    $result2 = $conn->query($query2);
+    ?>
+    <div class="rowOptGroup">
+        <div class="rowOpt">
+            <i class="fas fa-pencil-ruler"></i>
+            <div>
+                <label class="nameItem"><?=$stringOptNumUser?></label>
+                <summary><?=$result2->num_rows?></summary>
+            </div>
+        </div>
+    </div>
+    <?}
+    if($row["role"]!="user"){
+    ?>
+    <div class="rowOptGroup">
+        <div class="rowOpt">
+            <i class="fas fa-pencil-ruler"></i>
+            <div>
+                <label class="nameItem"><?=$stringOptRole?></label>
+                <summary><?=$stringSummeryChangeRole?></summary>
+            </div>
+        </div>
+    </div>
+    <?}?>
     <div class="rowOptGroup">
         <div class="rowOpt openView" data-link="../LICENSE">
             <i class="fas fa-copyright"></i>

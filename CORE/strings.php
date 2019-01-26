@@ -32,6 +32,9 @@ if($lang=="eng") {
     
     // user settings
     $stringOptPsw = "Password";
+    $stringOptRole = "Role";
+    $stringOptNumUser = "Number of user";
+    $stringSummeryChangeRole = "Change user role";
     
     // general ui
     $confirmAlert = "Are you sure ?";
@@ -68,7 +71,9 @@ if($lang=="eng") {
 
     // user settings
     $stringOptPsw = "Password";
-
+    $stringOptRole = "Ruolo";
+    $stringOptNumUser = "Numero degli utenti";
+    $stringSummeryChangeRole = "Cambia il ruolo dell'utente";
     // general ui
     $confirmAlert = "Sei sicuro ?";
 } elseif($lang=="es"){
@@ -104,6 +109,9 @@ if($lang=="eng") {
 
     // user settings
     $stringOptPsw = "Contraseña";
+    $stringOptRole = "Rol";
+    $stringOptNumUser = "Numero de usuarios";
+    $stringSummeryChangeRole = "Cambia el rol del usuario";
 
     // general ui
     $confirmAlert = "¿Estas seguro ?";
