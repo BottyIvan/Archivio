@@ -50,6 +50,14 @@ $row = $result->fetch_assoc();
             </div>
         </div>
     </div>
+    <div class="rowOptGroup">
+        <div class="rowOpt linkItem" data-link="../?available=false">
+            <i class="fas fa-folder-open"></i>
+            <div>
+                <label class="nameItem">NO available</label>
+            </div>
+        </div>
+    </div>
     <?
     if($row["role"]=="super"){
     $query2 = "SELECT id FROM admin";

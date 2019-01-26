@@ -48,7 +48,9 @@ if($operation=="edit"){
     $queryEdit= "UPDATE archive";
     $queryEdit .= " SET ";
     foreach($items as $item => $value){
-         $queryEdit .= $item."='".$value."',";
+        $queryEdit .= $item."='".$value."',";
+        if($item=="quantity" AND $value==0) $queryEdit .= "available='false',";
+        elseif($item=="quantity" AND $value>0) $queryEdit .= "available='true',";
     }
     $queryEdit = substr($queryEdit,0,-1);
     $queryEdit .= " WHERE id=$id";

@@ -5,16 +5,26 @@ include("session.php");
 if($_REQUEST['init']==1){
     $search = "%";
     $typeFilter = "%";
+    $available = "true";
 } elseif(isset($_REQUEST['search'])) {
     $search = $_REQUEST["search"];
     $typeFilter = $_SESSION["typeFilter"];
+    $available = "true";
 } elseif(isset($_REQUEST['typeFilter'])) {
     $search = $_SESSION["search"];
     $typeFilter = $_REQUEST["typeFilter"];
+    $available = "true";
+}  elseif(isset($_REQUEST['available'])) {
+    $search = $_SESSION["search"];
+    $typeFilter = $_SESSION["typeFilter"];
+    $available = "false";
 } else {
     $search = $_SESSION["search"];
     $typeFilter = $_SESSION["typeFilter"];
+    $available = "true";
 }
+
+$username = $_COOKIE["username"];
 
 if(is_null($_REQUEST["lang"]) AND !isset($_COOKIE["pref_lang"]))
     $lang = "eng";
@@ -73,7 +83,7 @@ if($_SESSION["debug"]=="true" OR $_REQUEST["debug"]=="true"){
         <script src="<?=JS_DIR?>/main.js" type="text/javascript"></script>
     </head>
     <?
-    $query = "SELECT * FROM archive WHERE available='true' AND name LIKE '%$search%' AND type LIKE '%$typeFilter%' ORDER BY id DESC";
+    $query = "SELECT * FROM archive WHERE available='$available' AND name LIKE '%$search%' AND type LIKE '%$typeFilter%' ORDER BY id DESC";
     $result = $conn->query($query);
     ?>
     <body <?="class=\"$color\""?>>

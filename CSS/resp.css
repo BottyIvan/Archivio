@@ -10,12 +10,20 @@
     }
     
     .header > .formSearch > .btnSearch{
-        right: 0px !important;
+        right: 6px !important;
+    }
+    
+    .view > .mainView > div > form > .itemViewRow > .nameItem, .view > .mainView > div > form > .editItem > .itemViewRow > .nameItem{
+        font-size: 20px;
     }
     
     .view > .mainView > div > form > .itemViewRow > .listItemPhoto > .listItem{
         width: 200px;
         height: 200px;
+    }
+    
+    .view > .mainView {
+        max-height: calc(100% - 130px);
     }
     
     .fixedToolBar{
@@ -47,10 +55,6 @@
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) { 
-
-    .formSearch{
-        width: calc(100% - 10%);
-    }
     
     .header > .formSearch > .btnSearch{
         right: 0px;

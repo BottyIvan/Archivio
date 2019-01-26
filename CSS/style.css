@@ -14,6 +14,16 @@ body{
     background: white;
     font-family: 'Open Sans', sans-serif;
     color: #333;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.slider{
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
 .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active{
@@ -146,6 +156,11 @@ body{
     align-items: center;
     height: 50px;
     width: 100%;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
 }
 
 .fixedToolBar{
@@ -156,8 +171,11 @@ body{
     padding: 1%;
     margin-top: -1em;
     box-shadow: 0 1px 5px 0px #33333342;
-    -webkit-transition: height 0.4s; /* For Safari 3.1 to 6.0 */
-    transition: height 0.4s;
+    -webkit-transition: height 0.3s;
+    -moz-transition: height 0.3s;
+    -ms-transition: height 0.3s;
+    -o-transition: height 0.3s;
+    transition: height 0.3s;
 }
 
 .fixedBar{
@@ -173,8 +191,11 @@ body{
     margin-left: 0 !important;
     margin-right: 0 !important;
     margin-bottom: 0 !important;
-    -webkit-transition: height 0.4s; /* For Safari 3.1 to 6.0 */
-    transition: height 0.4s;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
 }
 
 .header > .fixedBar > .btnSearch {
@@ -183,12 +204,19 @@ body{
 }
 
 .formSearch{
-    margin-bottom: 0;
-    margin-top: 0.5em;
-    padding: 0;
-    width: 100%;
-    -webkit-transition: height 0.4s; /* For Safari 3.1 to 6.0 */
-    transition: height 0.4s;
+    width: calc(100% - 40%);
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 0.5em !important;
+    margin-top: 0.5em !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-bottom: 0 !important;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
 }
 
 .formSearch:hover{
@@ -201,8 +229,11 @@ body{
     margin-left: 0 !important;
     margin-right: 0 !important;
     margin-bottom: 0 !important;
-    -webkit-transition: height 0.4s;
-    transition: height 0.4s;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
 }
 
 
@@ -278,10 +309,20 @@ body{
     padding-top: 0.5em;
     padding-left: 1em;
     padding-right: 1em;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
 }
 
 .filterSelector > .listFilter > li:hover{
     box-shadow: 0px 1px 1px 0px #dadada;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
 }
 
 .main{
@@ -387,7 +428,8 @@ body{
     width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
     width: fill-available;
     max-height: calc(100% - 200px);
-    padding-bottom: 50px;
+    margin-bottom: 45px;
+    padding-bottom: 1em;
     padding-top: 1em;
     padding-right: 1em;
     padding-left: 1em;
@@ -401,6 +443,16 @@ body{
 .view > .mainView > div > form > .itemViewRow, .view > .mainView > div > form > .editItem > .itemViewRow  {
     padding-bottom: 1em;
     padding-top: 1em;
+}
+
+.view > .mainView > div > form > .toolBar, .view > .mainView > div > form > .editItem > .toolBar{
+    display: flex;
+    justify-content: space-between;
+    -webkit-transition: height 0.3s;
+    -moz-transition: height 0.3s;
+    -ms-transition: height 0.3s;
+    -o-transition: height 0.3s;
+    transition: height 0.3s;
 }
 
 .view > .mainView > div > form > .editItem{
@@ -481,6 +533,11 @@ body{
     border-right: 1px solid whitesmoke;
     border-left: 1px solid whitesmoke;
     border-bottom: 1px solid whitesmoke;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
 }
 
 .row:first-child{
@@ -498,6 +555,11 @@ body{
 
 .row:hover{
     box-shadow: 0 0 5px 0px #dadada;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
 }
 
 .row > div {
@@ -601,6 +663,13 @@ body{
     width: 100%;
     border: none;
     outline: none;
+}
+
+.rowOpt{
+    border: none;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 .navBottom{
