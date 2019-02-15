@@ -76,7 +76,7 @@ $row = $result->fetch_assoc();
     if($row["role"]!="user"){
     ?>
     <div class="rowOptGroup">
-        <div class="rowOpt">
+        <div class="rowOpt linkItem" data-link="settings_users.php">
             <i class="fas fa-pencil-ruler"></i>
             <div>
                 <label class="nameItem"><?=$stringOptRole?></label>
@@ -86,10 +86,11 @@ $row = $result->fetch_assoc();
     </div>
     <?}?>
     <div class="rowOptGroup">
-        <div class="rowOpt openView" data-link="../LICENSE">
+        <div class="rowOpt">
             <i class="fas fa-copyright"></i>
             <div>
-                <label class="nameItem">Apache License</label>
+				<p><label class="nameItem linkItem" data-link="../LICENSE">Apache License</label></p>
+				<p><label class="nameItem linkItem" data-link="https://github.com/BottyIvan/Archivio">Project on 2019 GitHub, Inc.</label></p>
                 <summary>ivanbotty.cloud &copy; <?=date('Y')?></summary>
             </div>
         </div>

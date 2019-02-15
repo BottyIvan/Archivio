@@ -77,6 +77,28 @@ if($operation=="del"){
     header("location: ../");
 }
 
+if($operation=="edit_user"){
+	$queryEdit= "UPDATE admin";
+    $queryEdit .= " SET ";
+    foreach($items as $item => $value){
+        $queryEdit .= $item."='".$value."',";
+    }
+    $queryEdit = substr($queryEdit,0,-1);
+    $queryEdit .= " WHERE id=$id";
+
+    if ($conn->query($queryEdit) != TRUE) {
+        echo "Error: " . $queryEdit . "<br>" . $conn->error;
+    }
+    
+     if(!is_null($tmpItemPhoto)){
+        $dirItem = "../itemPhoto/".$id;
+        $dirItem = checkForDir($dirItem);    
+        uploadItemPhoto($dirItem,$itemPhoto,$tmpItemPhoto,$id,$conn);
+    }
+    
+    header("location: ../");
+}
+
 if($operation=="add_photo"){
     if(!is_dir($dir)){
         if (!mkdir($dir, 0777, true)) die('Failed to create folders...');

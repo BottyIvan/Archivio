@@ -446,6 +446,7 @@ body{
 }
 
 .view > .mainView > div > form > .toolBar, .view > .mainView > div > form > .editItem > .toolBar{
+	z-index: 3;
     display: flex;
     justify-content: space-between;
     -webkit-transition: height 0.3s;
