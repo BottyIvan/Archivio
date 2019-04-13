@@ -11,6 +11,7 @@ if($lang=="eng") {
     $stringName = "Name" ;
     $stringType = "Type";
     $stringQuantity = "Quantity";
+	$stringCode = "Item code";
     $stringPriority = "Priority";
     $stringLength = "Length";
     $stringHigh = "High";
@@ -50,6 +51,7 @@ if($lang=="eng") {
     $stringName = "Nome";
     $stringType = "Tipo";
     $stringQuantity = "Quantità";
+	$stringCode = "Codice prodotto";
     $stringPriority = "Priorità";
     $stringLength = "Lunghezza";
     $stringHigh = "Altezza";
@@ -88,6 +90,7 @@ if($lang=="eng") {
     $stringName = "Nombre";
     $stringType = "Tipo";
     $stringQuantity = "Cantidad";
+	$stringCode = "Código de producto";
     $stringPriority = "Prioridad";
     $stringLength = "Longitud";
     $stringHigh = "Altura";

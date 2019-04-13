@@ -5,6 +5,7 @@ $(document).ready(function () {
         linkItem = $('.linkItem'),
         openView = $('.openView'),
         openViewOption = $('.openViewOption'),
+		openItemFromURL = $('.openItemFromURL'),
         fullText = $('.fullText'),
         view = $('.view'),
         closeViewArea = $('.closeViewArea'),
@@ -24,6 +25,14 @@ $(document).ready(function () {
         
         addScrollText();
     });
+	
+	if(openItemFromURL.length){
+		var link = $(this).attr('data-link');
+        body.addClass('loader');
+        setTimeout(function(){
+            openViewUI(link);
+        }, 450);
+	}
     
     $(window).on('scroll',function(){
         if($(window).scrollTop() > 50) formSearch.addClass('fixedBar');
@@ -85,11 +94,18 @@ $(document).ready(function () {
         closeViewUI();
     });
     
+	function changeUrl(url){
+		var mUrl = 'http://www.thomasmaneggia.it/archivio/'+url;
+		window.history.pushState('data','Title',mUrl);
+	}
+	
     function openViewUI(link){
         view.show();
         mainView.load(link);
         mainView.addClass('fadeInElement').removeClass('hidden');
         body.removeClass('loader').addClass('fixed');
+		formSearch.hide();
+		changeUrl(link);
     }
     
     function closeViewUI(){
@@ -99,6 +115,8 @@ $(document).ready(function () {
             body.removeClass('loader').removeClass('fixed');
             mainView.addClass('hidden').removeClass('fadeOutElement');
             mainView.addClass('mainView').removeClass('mainViewOption');
+			formSearch.show();
+			changeUrl('?init=1');
             $(view).hide();
             }, 450);
     }

@@ -83,7 +83,7 @@ if($_SESSION["debug"]=="true" OR $_REQUEST["debug"]=="true"){
         <script src="<?=JS_DIR?>/main.js" type="text/javascript"></script>
     </head>
     <?
-    $query = "SELECT * FROM archive WHERE available='$available' AND name LIKE '%$search%' AND type LIKE '%$typeFilter%' ORDER BY id DESC";
+    $query = "SELECT * FROM archive WHERE available='$available' AND (name LIKE '%$search%' OR id LIKE '%$search%') AND type LIKE '%$typeFilter%' ORDER BY id DESC";
     $result = $conn->query($query);
     ?>
     <body <?="class=\"$color\""?>>

@@ -6,7 +6,7 @@ include("CORE/strings.php");
     <div class="rowOptGroup">
         <i class="fas fa-user-circle"></i>
         <button class="rowOpt" onclick="location.href='<?=INDEX?>/include/user.php'">
-            <?=$stringOptUser?>
+            <?=$_SESSION['login_user']?>
         </button>
     </div>
     <div class="rowOptGroup">

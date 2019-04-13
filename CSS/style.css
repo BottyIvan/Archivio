@@ -440,7 +440,7 @@ body{
     box-shadow: 0 -1px 20px 0px #00000024;
 }
 
-.view > .mainView > div > form > .itemViewRow, .view > .mainView > div > form > .editItem > .itemViewRow  {
+.view > .mainView > div > form > .viewItem > .itemViewRow, .view > .mainView > div > form > .editItem > .itemViewRow  {
     padding-bottom: 1em;
     padding-top: 1em;
 }
@@ -465,7 +465,7 @@ body{
     font-weight: bold;
 }
 
-.view > .mainView > div > form > .itemViewRow > .listItemPhoto{
+.view > .mainView > div > form > .viewItem > .itemViewRow > .listItemPhoto{
     margin-block-start: 0;
     margin-block-end: 0;
     padding-inline-start: 0;
@@ -478,12 +478,12 @@ body{
     list-style: none;
 }
 
-.view > .mainView > div > form > .itemViewRow > .listItemPhoto > .listItem{
+.view > .mainView > div > form > .viewItem > .itemViewRow > .listItemPhoto > .listItem{
     margin-left: 5px;
     margin-right: 5px;
 } 
 
-.view > .mainView > div > form > .itemViewRow > .listItemPhoto > .listItem > img{
+.view > .mainView > div > form > .viewItem > .itemViewRow > .listItemPhoto > .listItem > img{
     width: inherit;
     border-radius: 5px;
     border: 1px solid whitesmoke;
@@ -491,11 +491,11 @@ body{
 
 
 /* per mettere il campo position in alto a destra */
-.view > .mainView > div > form > .itemViewRow:nth-child(1) > span:nth-child(2), .view > .mainView > div > form > .editItem > .itemViewRow:nth-child(1) > span:nth-child(2)  { 
+.view > .mainView > div > form > .viewItem > .itemViewRow:nth-child(1) > span:nth-child(2), .view > .mainView > div > form > .editItem > .itemViewRow:nth-child(1) > span:nth-child(2)  { 
     float: right;
 }
 
-.view > .mainView > div > form > .itemViewRow > .typeItem, .view > .mainView > div > form > .editItem > .itemViewRow > .typeItem{
+.view > .mainView > div > form > .viewItem > .itemViewRow > .typeItem, .view > .mainView > div > form > .editItem > .itemViewRow > .typeItem{
     text-transform: capitalize;
     margin-left: 5px;
     margin-right: 5px;
@@ -507,7 +507,7 @@ body{
     padding-right: 1em;
 }
 
-.view > .mainView > div > form > .itemViewRow > .input, .view > .mainView > div > form > .editItem > .itemViewRow > .input, .rowOptGroup > .rowOpt > div > form > div > input{
+.view > .mainView > div > form > .viewItem > .itemViewRow > .input, .view > .mainView > div > form > .editItem > .itemViewRow > .input, .rowOptGroup > .rowOpt > div > form > div > input{
     font-size: 25px;
     border: none;
     outline: none;
@@ -518,7 +518,7 @@ body{
     margin-bottom: 0.5em;
 }
 
-.view > .mainView > div > form > .itemViewRow > .inputTextarea, .view > .mainView > div > form > .editItem > .itemViewRow > .inputTextarea{
+.view > .mainView > div > form > .viewItem > .itemViewRow > .inputTextarea, .view > .mainView > div > form > .editItem > .itemViewRow > .inputTextarea{
     width: 100%;
     font-size: 25px;
     border: none;
@@ -673,6 +673,26 @@ body{
     text-transform: uppercase;
 }
 
+.navMenu {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	align-content: center;
+	list-style: none;
+	height: 50px;
+	position: relative;
+}
+
+.navMenu > .navMenuItem{
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	margin-right: 0.5em;
+	margin-left: 0.5em;
+	position: relative;
+	height: 30px;
+}
+
 .navBottom{
     z-index: 999999;
     background: white;
@@ -700,6 +720,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+	position: relative;
     height: 40px;
     width: 40px;
     font-size: 20px;
@@ -707,10 +728,10 @@ body{
     margin-right: 15px;
 }
 
-.navBottom > nav > .activeNav::after{
+.navBottom > nav > .activeNav::after, .navMenu > .activeMenu::after{
     content: '';
     height: 3px;
-    width: 45px;
+    width: 105%;
     bottom: 0;
     position: absolute;
     border-top-left-radius: 3px;

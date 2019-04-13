@@ -13,11 +13,11 @@
         right: 6px !important;
     }
     
-    .view > .mainView > div > form > .itemViewRow > .nameItem, .view > .mainView > div > form > .editItem > .itemViewRow > .nameItem{
+    .view > .mainView > div > form > .editItem > .itemViewRow > .nameItem{
         font-size: 20px;
     }
     
-    .view > .mainView > div > form > .itemViewRow > .listItemPhoto > .listItem{
+    .view > .mainView > div > form > .viewItem > .itemViewRow > .listItemPhoto > .listItem{
         width: 200px;
         height: 200px;
     }
@@ -65,7 +65,7 @@
         left: 0;
     }
     
-    .view > .mainView > div > form > .itemViewRow > .listItemPhoto > .listItem{
+    .view > .mainView > div > form > .viewItem > .itemViewRow > .listItemPhoto > .listItem{
         width: 250px;
         height: 250px;
     }
@@ -116,7 +116,7 @@
         left: 25%;
     }
     
-    .view > .mainView > div > form > .itemViewRow > .listItemPhoto > .listItem{
+    .view > .mainView > div > form > .viewItem > .itemViewRow > .listItemPhoto > .listItem{
         width: 250px;
         height: 250px;
     }

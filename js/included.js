@@ -1,6 +1,8 @@
 $(document).ready(function () { 
     
-    var editItem = $('.editItem'),
+    var navMenuItem = $('.navMenuItem'),
+		viewItem = $('.viewItem'),
+		editItem = $('.editItem'),
         redDel = $('.redDel'),
         saveEditItem = $('.saveEditItem'),
         btnEditItem = $('.btnEditItem'),
@@ -10,7 +12,7 @@ $(document).ready(function () {
         itemQuantity = slider.attr('item-quantity');
     
     var quantityChange = $('#quantityChange');
-    
+	   
     slider.slider({
         value: itemQuantity,
         min: 0,
@@ -23,7 +25,22 @@ $(document).ready(function () {
             $.post("CORE/sql.php?operation=edit&id="+itemID,{quantity : ui.value});
         }
     });
-    
+	
+	navMenuItem.on('click',function(){
+		navMenuItem.removeClass('activeMenu');
+		menuItem = $(this).attr('menu');
+		if(menuItem == 'view'){
+			editItem.hide();
+			viewItem.show();
+			$(this).addClass('activeMenu');
+		}
+		if(menuItem == 'edit') {
+			viewItem.hide();
+			editItem.show();
+			$(this).addClass('activeMenu');
+		}
+	});
+	
     btnEditItem.click(function(){
         editItem.show();
         redDel.show();

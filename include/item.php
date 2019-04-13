@@ -20,6 +20,10 @@ if ($result->num_rows > 0) {
 $row = $result->fetch_assoc();
 
 include("../CORE/strings.php");
+	
+$userQuery = "SELECT * FROM admin WHERE username LIKE '".$_COOKIE["username"]."'";
+$userResult = $conn->query($userQuery);
+$user = $userResult->fetch_assoc();
 ?>
 <div>
     <form method="post" action="CORE/sql.php?operation=edit&id=<?=$row["id"]?>" id="editItemFrom" name="editItemFrom" enctype="multipart/form-data">
@@ -27,78 +31,92 @@ include("../CORE/strings.php");
             <span class="nameItem"><?=$row["name"]?></span>
             <span><?=$row["position"]?></span>
         </div>
-        <div class="itemViewRow">
-            <span class="typeItem"><?=$row["type"]?></span>
-        </div>
-        <?
-        $itemPhoto = "SELECT * FROM archive_item_image WHERE id_archive = $item";
-        $rsPhoto = $conn->query($itemPhoto);
-        if ($rsPhoto->num_rows > 0) {?>
-            <div class="itemViewRow">
-                <ul class="listItemPhoto">
-                    <?
-                        while($photoRow = $rsPhoto->fetch_assoc()){?>
-                        <li class="listItem">
-                            <img src="<?=INDEX."/itemPhoto/".$photoRow["image"]?>">
-                        </li>
-                    <?}?>
-                </ul>
-            </div>
-        <?}?>
-        <div class="itemViewRow">
-            <span><?=$stringQuantity?>&nbsp;:&nbsp;</span><span id="quantityChange"></span>
-            <div class="slider" item-id="<?=$row["id"]?>" item-quantity="<?=$row["quantity"]?>"></div>
-        </div>
-        <? if($row["description"]!=""){?>
-        <div class="itemViewRow">
-            <?=$row["description"]?>
-        </div>
-        <?}?>
-        <? if($row["quantity"]!=0){?>
-        <div class="itemViewRow">
-            <span><?=$stringQuantity?>&nbsp;:&nbsp;</span><?=$row["quantity"]?>
-        </div>
-        <?}?>
-        <? if($row["priority"]!=0){?>
-        <div class="itemViewRow">
-            <span><?=$stringPriority?>&nbsp;:&nbsp;</span><?=$row["priority"]?>
-        </div>
-        <?}?>
-        <? if($row["length"]!=0){?>
-        <div class="itemViewRow">
-            <span><?=$stringLength?>&nbsp;:&nbsp;</span><?=$row["length"]?>
-        </div>
-        <?}?>
-        <? if($row["high"]!=0){?>
-        <div class="itemViewRow">
-            <span><?=$stringHigh?>&nbsp;:&nbsp;</span><?=$row["high"]?>
-        </div>
-        <?}?>
-        <? if($row["width"]!=0){?>
-        <div class="itemViewRow">
-            <span><?=$stringWidth?>&nbsp;:&nbsp;</span><?=$row["width"]?>
-        </div>
-        <?}?>
-        <? if($row["depth"]!=0){?>
-        <div class="itemViewRow">
-            <span><?=$stringDepth?>&nbsp;:&nbsp;</span><?=$row["depth"]?>
-        </div>
-        <?}?>
-        <? if($row["color"]!=0){?>
-        <div class="itemViewRow">
-            <span><?=$stringColor?>&nbsp;:&nbsp;</span><?=$row["color"]?>
-        </div>
-        <?}?>
-        <? if($row["material"]!=0){?>
-        <div class="itemViewRow">
-            <span><?=$stringMaterial?>&nbsp;:&nbsp;</span><?=$row["material"]?>
-        </div>
-        <?}?>
-        <? if($row["position"]!=""){?>
-        <div class="itemViewRow">
-            <span><?=$stringPosition?>&nbsp;:&nbsp;</span><?=$row["position"]?>
-        </div>
-        <?}?>
+		<nav class="navMenu">
+			<li class="navMenuItem activeMenu" menu="view">View item</li>
+			<? if($user["role"]!="user"){?>
+			<li class="navMenuItem" menu="edit">Edit</li>
+			<?}?>
+		</nav>
+		<div class="viewItem">
+			<div class="itemViewRow">
+				<span class="typeItem"><?=$row["type"]?></span>
+			</div>
+			<?
+			$itemPhoto = "SELECT * FROM archive_item_image WHERE id_archive = $item";
+			$rsPhoto = $conn->query($itemPhoto);
+			if ($rsPhoto->num_rows > 0) {?>
+				<div class="itemViewRow">
+					<ul class="listItemPhoto">
+						<?
+							while($photoRow = $rsPhoto->fetch_assoc()){?>
+							<li class="listItem">
+								<img src="<?=INDEX."/itemPhoto/".$photoRow["image"]?>">
+							</li>
+						<?}?>
+					</ul>
+				</div>
+			<?}?>
+			<div class="itemViewRow">
+				<span><?=$stringQuantity?>&nbsp;:&nbsp;</span><span id="quantityChange"></span>
+				<div class="slider" item-id="<?=$row["id"]?>" item-quantity="<?=$row["quantity"]?>"></div>
+			</div>
+			<? if($row["description"]!=""){?>
+			<div class="itemViewRow">
+				<?=$row["description"]?>
+			</div>
+			<?}?>
+			<? if($row["quantity"]!=0){?>
+			<div class="itemViewRow">
+				<span><?=$stringQuantity?>&nbsp;:&nbsp;</span><?=$row["quantity"]?>
+			</div>
+			<?}?>
+			<? if($row["id"]!=0){?>
+			<div class="itemViewRow">
+				<span><?=$stringCode?>&nbsp;:&nbsp;</span><?=$row["id"]?>
+			</div>
+			<?}?>
+			<? if($row["priority"]!=0){?>
+			<div class="itemViewRow">
+				<span><?=$stringPriority?>&nbsp;:&nbsp;</span><?=$row["priority"]?>
+			</div>
+			<?}?>
+			<? if($row["length"]!=0){?>
+			<div class="itemViewRow">
+				<span><?=$stringLength?>&nbsp;:&nbsp;</span><?=$row["length"]?>
+			</div>
+			<?}?>
+			<? if($row["high"]!=0){?>
+			<div class="itemViewRow">
+				<span><?=$stringHigh?>&nbsp;:&nbsp;</span><?=$row["high"]?>
+			</div>
+			<?}?>
+			<? if($row["width"]!=0){?>
+			<div class="itemViewRow">
+				<span><?=$stringWidth?>&nbsp;:&nbsp;</span><?=$row["width"]?>
+			</div>
+			<?}?>
+			<? if($row["depth"]!=0){?>
+			<div class="itemViewRow">
+				<span><?=$stringDepth?>&nbsp;:&nbsp;</span><?=$row["depth"]?>
+			</div>
+			<?}?>
+			<? if($row["color"]!=0){?>
+			<div class="itemViewRow">
+				<span><?=$stringColor?>&nbsp;:&nbsp;</span><?=$row["color"]?>
+			</div>
+			<?}?>
+			<? if($row["material"]!=0){?>
+			<div class="itemViewRow">
+				<span><?=$stringMaterial?>&nbsp;:&nbsp;</span><?=$row["material"]?>
+			</div>
+			<?}?>
+			<? if($row["position"]!=""){?>
+			<div class="itemViewRow">
+				<span><?=$stringPosition?>&nbsp;:&nbsp;</span><?=$row["position"]?>
+			</div>
+			<?}?>
+		</div>
+		<? if($user["role"]!="user"){?>
         <div class="editItem">
             <div class="itemViewRow">
                 <span><?=$stringName?>&nbsp;:</span>
@@ -165,16 +183,16 @@ include("../CORE/strings.php");
                 <input type="file" name="itemPhoto" id="itemPhoto">
             </div>
         </div>
+		<?}?>
     </form>
+	<? if($user["role"]!="user"){?>
     <button class="btnSubmit saveEditItem" type="button" onclick="document.editItemFrom.submit();">
         <i class="fas fa-save"></i>&nbsp;<?=$stringBtnSubmit?>
     </button>
     <button class="btnSubmit redDel" type="button" onclick="if(confirm('<?=$confirmAlert?>'))location.href='CORE/sql.php?operation=del&id=<?=$row["id"]?>'">
         <i class="fas fa-trash"></i>&nbsp;<?=$stringBtnDel?>
     </button>
-    <button class="btnSubmit btnEditItem" type="button">
-        <i class="fas fa-edit"></i>&nbsp;Edit
-    </button>
+	<?}?>
 </div>
 <script src="<?=JS_DIR?>/included.js" type="text/javascript"></script>
 <?}$conn->close(); ?>
