@@ -37,16 +37,12 @@ $(document).ready(function () {
 		if(menuItem == 'edit') {
 			viewItem.hide();
 			editItem.show();
+			editItem.show();
+			redDel.show();
+			saveEditItem.show();
 			$(this).addClass('activeMenu');
 		}
 	});
-	
-    btnEditItem.click(function(){
-        editItem.show();
-        redDel.show();
-        saveEditItem.show();
-        btnEditItem.hide();
-    });
     
     $('.mainView').on('scroll',function(){
         if($('.mainView').scrollTop() > 50) $('.toolBar').addClass('fixedToolBar');
