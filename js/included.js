@@ -32,11 +32,12 @@ $(document).ready(function () {
 		if(menuItem == 'view'){
 			editItem.hide();
 			viewItem.show();
+			redDel.hide();
+			saveEditItem.hide();
 			$(this).addClass('activeMenu');
 		}
 		if(menuItem == 'edit') {
 			viewItem.hide();
-			editItem.show();
 			editItem.show();
 			redDel.show();
 			saveEditItem.show();

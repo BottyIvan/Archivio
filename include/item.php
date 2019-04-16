@@ -26,7 +26,7 @@ $userResult = $conn->query($userQuery);
 $user = $userResult->fetch_assoc();
 ?>
 <div>
-    <form method="post" action="CORE/sql.php?operation=edit&id=<?=$row["id"]?>" id="editItemFrom" name="editItemFrom" enctype="multipart/form-data">
+    <form method="post" action="../CORE/sql.php?operation=edit&id=<?=$row["id"]?>" id="editItemFrom" name="editItemFrom" enctype="multipart/form-data">
         <div class="itemViewRow toolBar">
             <span class="nameItem"><?=$row["name"]?></span>
             <span><?=$row["position"]?></span>
