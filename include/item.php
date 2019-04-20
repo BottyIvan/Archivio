@@ -1,6 +1,9 @@
 <?
-include("../pref/DIR.php");
-include("../CORE/conn.php");
+if(substr($_SERVER[REQUEST_URI],0,18) == "/archivio/include/") {
+	//require_once("../header.php");
+}
+require_once("../pref/DIR.php");
+require_once("../CORE/conn.php");
 if(!isset($search)){
     $search = "%";
 }
@@ -19,7 +22,7 @@ $result = $conn->query($query);
 if ($result->num_rows > 0) {
 $row = $result->fetch_assoc();
 
-include("../CORE/strings.php");
+require_once("../CORE/strings.php");
 	
 $userQuery = "SELECT * FROM admin WHERE username LIKE '".$_COOKIE["username"]."'";
 $userResult = $conn->query($userQuery);
@@ -40,6 +43,7 @@ $user = $userResult->fetch_assoc();
 		<div class="viewItem">
 			<div class="itemViewRow">
 				<span class="typeItem"><?=$row["type"]?></span>
+				<span class="bucketItem <?if($row["bucket"]=="s") echo "inBucket";?>" item-id="<?=$row["id"]?>"><i class="fas fa-shopping-cart"></i>&nbsp;<?=$addBucket?></span>
 			</div>
 			<?
 			$itemPhoto = "SELECT * FROM archive_item_image WHERE id_archive = $item";

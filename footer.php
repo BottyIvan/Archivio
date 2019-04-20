@@ -12,6 +12,9 @@
         <span class="navItem linkItem <?if($page=="index") echo "activeNav";?>"  data-link="<?=INDEX?>">
             <i class="fas fa-folder-minus"></i>
         </span>
+        <span class="navItem linkItem <?if($page=="index/?bucket=s") echo "activeNav";?>"  data-link="<?=INDEX?>/?bucket=s">
+            <i class="fas fa-shopping-cart"></i>
+        </span>
 		<? if($user["role"]!="user") {?>
         <span class="navItem linkItem <?if($page=="add_item") echo "activeNav";?>" data-link="<?=INDEX?>/include/add_item.php">
             <i class="fas fa-plus-circle"></i>

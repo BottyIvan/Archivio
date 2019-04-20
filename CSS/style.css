@@ -484,7 +484,7 @@ body{
 } 
 
 .view > .mainView > div > form > .viewItem > .itemViewRow > .listItemPhoto > .listItem > img{
-    width: inherit;
+    height: 100%;
     border-radius: 5px;
     border: 1px solid whitesmoke;
 }
@@ -493,6 +493,11 @@ body{
 /* per mettere il campo position in alto a destra */
 .view > .mainView > div > form > .viewItem > .itemViewRow:nth-child(1) > span:nth-child(2), .view > .mainView > div > form > .editItem > .itemViewRow:nth-child(1) > span:nth-child(2)  { 
     float: right;
+}
+
+.view > .mainView > div > form > .viewItem > .itemViewRow:nth-child(1){
+	display: flex;
+	justify-content: space-between;
 }
 
 .view > .mainView > div > form > .viewItem > .itemViewRow > .typeItem, .view > .mainView > div > form > .editItem > .itemViewRow > .typeItem{
@@ -505,6 +510,25 @@ body{
     padding-top: 0.5em;
     padding-left: 1em;
     padding-right: 1em;
+}
+
+.view > .mainView > div > form > .viewItem > .itemViewRow > .bucketItem{
+	cursor: pointer;
+    text-transform: capitalize;
+    margin-left: 5px;
+    margin-right: 5px;
+    border: 1px solid;
+    border-radius: 25px;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.view > .mainView > div > form > .viewItem > .itemViewRow > .inBucket{
+    border-color: limegreen;
+    background-color: greenyellow;
+    color: limegreen;
 }
 
 .view > .mainView > div > form > .viewItem > .itemViewRow > .input, .view > .mainView > div > form > .editItem > .itemViewRow > .input, .rowOptGroup > .rowOpt > div > form > div > input{

@@ -1,10 +1,10 @@
-<? include ("header.php");?>
+<? require_once ("header.php");?>
 <div class="filterSelector">
     <ul class="listFilter">
     <?
     $filter = "SELECT * FROM archive_type ORDER BY name ASC";
     $rsFilter= $conn->query($filter);
-    if($typeFilter!="%") { ?>
+    if($typeFilter!="%" OR $search!="%") { ?>
         <li class="linkItem listFilterClear" data-link="?init=1"><i class="fas fa-times"></i></li>
     <?
     }
@@ -38,4 +38,4 @@
     }
     ?>
 </section>
-<? include ("footer.php");?>
+<? require_once ("footer.php");?>

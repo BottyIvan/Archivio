@@ -23,6 +23,7 @@ if($lang=="eng") {
     $stringDescription = "Description";
     
     // botton
+	$addBucket = "Add to bucket";
     $stringBtnSubmit = "save";
     $stringBtnDel = "delate";
     
@@ -63,6 +64,7 @@ if($lang=="eng") {
     $stringDescription = "Descrizione";
     
     // botton
+	$addBucket = "Agg. al carrello";
     $stringBtnSubmit = "salva";
     $stringBtnDel = "cancella";
 
@@ -102,6 +104,7 @@ if($lang=="eng") {
     $stringDescription = "Descripción";
     
     // botton
+	$addBucket = "Add to bucket";
     $stringBtnSubmit = "guardar";
     $stringBtnDel = "borra";
 

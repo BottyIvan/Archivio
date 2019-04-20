@@ -1,27 +1,37 @@
 <?
-include("pref/DIR.php");
-include("CORE/conn.php");
-include("session.php");
+require_once("pref/DIR.php");
+require_once("CORE/conn.php");
+require_once("session.php");
 if($_REQUEST['init']==1){
-    $search = "%";
-    $typeFilter = "%";
-    $available = "true";
+    $search = '%';
+    $typeFilter = '%';
+    $available = 'true';
+	$bucket = '%';
 } elseif(isset($_REQUEST['search'])) {
     $search = $_REQUEST["search"];
     $typeFilter = $_SESSION["typeFilter"];
-    $available = "true";
+    $available = 'true';
+	$bucket = $_SESSION['bucket'];
 } elseif(isset($_REQUEST['typeFilter'])) {
     $search = $_SESSION["search"];
     $typeFilter = $_REQUEST["typeFilter"];
-    $available = "true";
+    $available = 'true';
+	$bucket = $_SESSION['bucket'];
 }  elseif(isset($_REQUEST['available'])) {
     $search = $_SESSION["search"];
     $typeFilter = $_SESSION["typeFilter"];
-    $available = "false";
+    $available = 'false';
+	$bucket = $_SESSION['bucket'];
+} elseif(isset($_REQUEST['bucket'])){
+    $search = $_SESSION["search"];
+    $typeFilter = $_SESSION['typeFilter'];
+    $available = 'false';
+	$bucket = $_REQUEST['bucket'];
 } else {
     $search = $_SESSION["search"];
     $typeFilter = $_SESSION["typeFilter"];
-    $available = "true";
+    $available = 'true';
+	$bucket = '%';
 }
 
 $username = $_COOKIE["username"];
@@ -40,14 +50,16 @@ else if($_REQUEST["color_pref"])
 else
     $color = $_COOKIE["color_pref"];
 
-$_SESSION["search"] = $search;
-$_SESSION["typeFilter"] = $typeFilter;
+$_SESSION['search'] = $search;
+$_SESSION['typeFilter'] = $typeFilter;
+$_SESSION['bucket'] = $bucket;
 setcookie("color_pref",$color, time() + (86400 * 30), "/"); // 86400 = 1 day
 setcookie("pref_lang",$lang, time() + (86400 * 30), "/"); // 86400 = 1 day
 
 include("CORE/strings.php");
 
 $page = pathinfo($_SERVER['PHP_SELF'], PATHINFO_FILENAME);
+if($bucket=="s") $page = $page."/?bucket=s";
 
 if($_SESSION["debug"]=="true" OR $_REQUEST["debug"]=="true"){
     echo "linguage: ".$lang."<br>";
@@ -83,7 +95,7 @@ if($_SESSION["debug"]=="true" OR $_REQUEST["debug"]=="true"){
         <script src="<?=JS_DIR?>/main.js" type="text/javascript"></script>
     </head>
     <?
-    $query = "SELECT * FROM archive WHERE available='$available' AND (name LIKE '%$search%' OR id LIKE '%$search%') AND type LIKE '%$typeFilter%' ORDER BY id DESC";
+    $query = "SELECT * FROM archive WHERE available='$available' AND (name LIKE '%$search%' OR id LIKE '%$search%') AND type LIKE '%$typeFilter%' AND bucket LIKE '%$bucket%' ORDER BY id DESC";
     $result = $conn->query($query);
     ?>
     <body <?="class=\"$color\""?>>
@@ -99,6 +111,9 @@ if($_SESSION["debug"]=="true" OR $_REQUEST["debug"]=="true"){
                 </form>
             <?} else {
                 switch ($page){
+					case "index/?bucket=s":
+						echo "Bucket";
+						break;
                     case "add_item":
                         echo $stringAddItem;
                         break;

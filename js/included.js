@@ -6,12 +6,15 @@ $(document).ready(function () {
         redDel = $('.redDel'),
         saveEditItem = $('.saveEditItem'),
         btnEditItem = $('.btnEditItem'),
-        slider = $('.slider');
+        slider = $('.slider'),
+		bucketItem = $('.bucketItem');
     
     var itemID = slider.attr('item-id'),
         itemQuantity = slider.attr('item-quantity');
     
     var quantityChange = $('#quantityChange');
+	
+	var bucketItemID = bucketItem.attr('item-id');
 	   
     slider.slider({
         value: itemQuantity,
@@ -25,6 +28,16 @@ $(document).ready(function () {
             $.post("CORE/sql.php?operation=edit&id="+itemID,{quantity : ui.value});
         }
     });
+	
+	bucketItem.on('click',function(){
+		if(bucketItem.hasClass('inBucket')){
+			$.post("../CORE/sql.php?operation=edit&id="+bucketItemID,{bucket : 'n'});
+			bucketItem.removeClass('inBucket');	
+		} else {
+			$.post("../CORE/sql.php?operation=edit&id="+bucketItemID,{bucket : 's'});
+			bucketItem.addClass('inBucket');	
+		}
+	});
 	
 	navMenuItem.on('click',function(){
 		navMenuItem.removeClass('activeMenu');
