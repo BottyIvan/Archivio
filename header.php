@@ -56,7 +56,7 @@ $_SESSION['bucket'] = $bucket;
 setcookie("color_pref",$color, time() + (86400 * 30), "/"); // 86400 = 1 day
 setcookie("pref_lang",$lang, time() + (86400 * 30), "/"); // 86400 = 1 day
 
-include("CORE/strings.php");
+require_once("CORE/strings.php");
 
 $page = pathinfo($_SERVER['PHP_SELF'], PATHINFO_FILENAME);
 if($bucket=="s") $page = $page."/?bucket=s";
@@ -94,10 +94,6 @@ if($_SESSION["debug"]=="true" OR $_REQUEST["debug"]=="true"){
         <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
         <script src="<?=JS_DIR?>/main.js" type="text/javascript"></script>
     </head>
-    <?
-    $query = "SELECT * FROM archive WHERE available='$available' AND (name LIKE '%$search%' OR id LIKE '%$search%') AND type LIKE '%$typeFilter%' AND bucket LIKE '%$bucket%' ORDER BY id DESC";
-    $result = $conn->query($query);
-    ?>
     <body <?="class=\"$color\""?>>
         <header class="header">
             <?if($page=="index"){?>

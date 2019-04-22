@@ -9,6 +9,9 @@ $(document).ready(function () {
         slider = $('.slider'),
 		bucketItem = $('.bucketItem');
     
+	var formData = $('#editItemFrom'),
+		idElement = $('#editItemFrom').attr('id-element');
+	
     var itemID = slider.attr('item-id'),
         itemQuantity = slider.attr('item-quantity');
     
@@ -16,6 +19,18 @@ $(document).ready(function () {
 	
 	var bucketItemID = bucketItem.attr('item-id');
 	   
+	saveEditItem.on('click',function(){
+		// at the click serializeArray
+		var dataSerialize = formData.serializeArray();
+		$.post("../CORE/sql.php?operation=edit&id="+idElement,{data : dataSerialize})
+		 .done(function(){
+			console.log("Element "+idElement+" update");
+		})
+		.fail(function(data){
+			console.log("Error : "+data);
+		});
+	});
+	
     slider.slider({
         value: itemQuantity,
         min: 0,
@@ -31,11 +46,15 @@ $(document).ready(function () {
 	
 	bucketItem.on('click',function(){
 		if(bucketItem.hasClass('inBucket')){
-			$.post("../CORE/sql.php?operation=edit&id="+bucketItemID,{bucket : 'n'});
-			bucketItem.removeClass('inBucket');	
+			$.post("../CORE/sql.php?operation=edit&id="+bucketItemID,{bucket : 'n'})
+			 .done(function(){
+				bucketItem.removeClass('inBucket');	
+			});
 		} else {
-			$.post("../CORE/sql.php?operation=edit&id="+bucketItemID,{bucket : 's'});
-			bucketItem.addClass('inBucket');	
+			$.post("../CORE/sql.php?operation=edit&id="+bucketItemID,{bucket : 's'})
+			 .done(function(){
+				bucketItem.addClass('inBucket');	
+			});
 		}
 	});
 	

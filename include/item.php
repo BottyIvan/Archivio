@@ -29,7 +29,7 @@ $userResult = $conn->query($userQuery);
 $user = $userResult->fetch_assoc();
 ?>
 <div>
-    <form method="post" action="../CORE/sql.php?operation=edit&id=<?=$row["id"]?>" id="editItemFrom" name="editItemFrom" enctype="multipart/form-data">
+    <form method="post" action="#" id-element="<?=$row["id"]?>" id="editItemFrom" name="editItemFrom" enctype="multipart/form-data">
         <div class="itemViewRow toolBar">
             <span class="nameItem"><?=$row["name"]?></span>
             <span><?=$row["position"]?></span>
@@ -190,10 +190,10 @@ $user = $userResult->fetch_assoc();
 		<?}?>
     </form>
 	<? if($user["role"]!="user"){?>
-    <button class="btnSubmit saveEditItem" type="button" onclick="document.editItemFrom.submit();">
+    <button class="btnSubmit saveEditItem" type="button">
         <i class="fas fa-save"></i>&nbsp;<?=$stringBtnSubmit?>
     </button>
-    <button class="btnSubmit redDel" type="button" onclick="if(confirm('<?=$confirmAlert?>'))location.href='CORE/sql.php?operation=del&id=<?=$row["id"]?>'">
+    <button class="btnSubmit redDel" type="button" onclick="if(confirm('<?=$confirmAlert?>'))location.href='../CORE/sql.php?operation=del&id=<?=$row["id"]?>'">
         <i class="fas fa-trash"></i>&nbsp;<?=$stringBtnDel?>
     </button>
 	<?}?>

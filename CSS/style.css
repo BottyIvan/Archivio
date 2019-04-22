@@ -526,9 +526,9 @@ body{
 }
 
 .view > .mainView > div > form > .viewItem > .itemViewRow > .inBucket{
-    border-color: limegreen;
-    background-color: greenyellow;
-    color: limegreen;
+    border-color: seagreen;
+    background-color: springgreen;
+    color: seagreen;
 }
 
 .view > .mainView > div > form > .viewItem > .itemViewRow > .input, .view > .mainView > div > form > .editItem > .itemViewRow > .input, .rowOptGroup > .rowOpt > div > form > div > input{

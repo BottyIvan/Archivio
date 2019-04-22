@@ -10,12 +10,30 @@ $(document).ready(function () {
         view = $('.view'),
         closeViewArea = $('.closeViewArea'),
         mainView = $('.mainView'),
+		navItem = $('.navItem'),
         screenY = $( window ).height(),
         screenX = $( window ).width();
     
     console.log("window height: "+screenY);
 	console.log("window width: "+screenX);
-        
+     
+	var app = {
+		home : '/archivio/include/home.php',
+		basket : '/archivio/?bucket=s',
+		addItem : '/archivio/include/add_item.php',
+		settings : '/archivio/include/settings.php',
+		noAvailable: '/archivio/?available=false'
+	};
+	
+	
+	/*navItem.each(function(){
+		var item = $(this);
+		item.on('click', function(){
+			$('.main > *').remove();
+			$('.main').load(item.attr('data-link'));
+		});
+	});*/
+	
     addScrollText();
     
 	$( window ).resize(function() {
@@ -62,7 +80,7 @@ $(document).ready(function () {
     });
     
     //link to another page like href
-    linkItem.click(function(){
+   linkItem.click(function(){
         var link = $(this).attr('data-link');
         if($('.fadeInElement').length){
                closeViewUI();
