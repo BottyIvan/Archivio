@@ -43,7 +43,7 @@ $user = $userResult->fetch_assoc();
 		<div class="viewItem">
 			<div class="itemViewRow">
 				<span class="typeItem"><?=$row["type"]?></span>
-				<span class="bucketItem <?if($row["bucket"]=="s") echo "inBucket";?>" item-id="<?=$row["id"]?>"><i class="fas fa-shopping-cart"></i>&nbsp;<?=$addBucket?></span>
+				<span class="basketItem <?if($row["basket"]=="s") echo "inBasket";?>" item-id="<?=$row["id"]?>"><i class="fas fa-shopping-cart"></i>&nbsp;<?=$addBucket?></span>
 			</div>
 			<?
 			$itemPhoto = "SELECT * FROM archive_item_image WHERE id_archive = $item";

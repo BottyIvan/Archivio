@@ -512,7 +512,7 @@ body{
     padding-right: 1em;
 }
 
-.view > .mainView > div > form > .viewItem > .itemViewRow > .bucketItem{
+.view > .mainView > div > form > .viewItem > .itemViewRow > .basketItem{
 	cursor: pointer;
     text-transform: capitalize;
     margin-left: 5px;
@@ -525,7 +525,7 @@ body{
     padding-right: 1em;
 }
 
-.view > .mainView > div > form > .viewItem > .itemViewRow > .inBucket{
+.view > .mainView > div > form > .viewItem > .itemViewRow > .inBasket{
     border-color: seagreen;
     background-color: springgreen;
     color: seagreen;

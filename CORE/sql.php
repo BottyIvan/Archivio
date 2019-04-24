@@ -47,24 +47,32 @@ if($operation=="add"){
 if($operation=="edit"){
     $queryEdit= "UPDATE archive";
     $queryEdit .= " SET ";
-	foreach($items['data'] as $item => $val){
-		$queryEdit .= $val['name']."='".$val['value']."',";
-		if($val['name']=="quantity" AND $val['value']==0) $queryEdit .= "available='false',";
-		elseif($val['name']=="quantity" AND $val['value']>0) $queryEdit .= "available='true',";
+	if(isset($items['data']) AND !is_null($items['data'])){
+		foreach($items['data'] as $item => $val){
+			$queryEdit .= $val['name']."='".$val['value']."',";
+			if($val['name']=="quantity" AND $val['value']==0) $queryEdit .= "available='false',";
+			elseif($val['name']=="quantity" AND $val['value']>0) $queryEdit .= "available='true',";
+		}
+	} else {
+		foreach($items as $item => $value){
+			$queryEdit .= $item."='".$value."',";
+			if($item=="quantity" AND $value==0) $queryEdit .= "available='false',";
+			elseif($item=="quantity" AND $value>0) $queryEdit .= "available='true',";
+		}
 	}
     $queryEdit = substr($queryEdit,0,-1);
     $queryEdit .= " WHERE id=$id";
-
+	
     if ($conn->query($queryEdit) != TRUE) {
         echo "Error: " . $queryEdit . "<br>" . $conn->error;
     }
     
      if(!is_null($tmpItemPhoto)){
         $dirItem = "../itemPhoto/".$id;
-        $dirItem = checkForDir($dirItem);    
+        $dirItem = checkForDir($dirItem);   
         uploadItemPhoto($dirItem,$itemPhoto,$tmpItemPhoto,$id,$conn);
     }
-    
+   
     header("location: ../");
 }
 

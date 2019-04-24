@@ -1,5 +1,5 @@
 <?
-$query = "SELECT * FROM archive WHERE available='$available' AND (name LIKE '%$search%' OR id LIKE '%$search%') AND type LIKE '%$typeFilter%' AND bucket LIKE '%$bucket%' ORDER BY id DESC";
+$query = "SELECT * FROM archive WHERE available LIKE '%$available%' AND (name LIKE '%$search%' OR id LIKE '%$search%') AND type LIKE '%$typeFilter%' AND basket LIKE '%$basket%' ORDER BY id DESC";
 $result = $conn->query($query);
 if ($result->num_rows > 0) {
 	while($row = $result->fetch_assoc()) {

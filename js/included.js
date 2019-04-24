@@ -7,7 +7,7 @@ $(document).ready(function () {
         saveEditItem = $('.saveEditItem'),
         btnEditItem = $('.btnEditItem'),
         slider = $('.slider'),
-		bucketItem = $('.bucketItem');
+		basketItem = $('.basketItem');
     
 	var formData = $('#editItemFrom'),
 		idElement = $('#editItemFrom').attr('id-element');
@@ -17,13 +17,14 @@ $(document).ready(function () {
     
     var quantityChange = $('#quantityChange');
 	
-	var bucketItemID = bucketItem.attr('item-id');
+	var basketItemID = basketItem.attr('item-id');
 	   
 	saveEditItem.on('click',function(){
 		// at the click serializeArray
 		var dataSerialize = formData.serializeArray();
 		$.post("../CORE/sql.php?operation=edit&id="+idElement,{data : dataSerialize})
-		 .done(function(){
+		 .done(function(e){
+			console.log(e);
 			console.log("Element "+idElement+" update");
 		})
 		.fail(function(data){
@@ -44,16 +45,16 @@ $(document).ready(function () {
         }
     });
 	
-	bucketItem.on('click',function(){
-		if(bucketItem.hasClass('inBucket')){
-			$.post("../CORE/sql.php?operation=edit&id="+bucketItemID,{bucket : 'n'})
+	basketItem.on('click',function(){
+		if(basketItem.hasClass('inBasket')){
+			$.post("../CORE/sql.php?operation=edit&id="+basketItemID,{basket : 'n'})
 			 .done(function(){
-				bucketItem.removeClass('inBucket');	
+				basketItem.removeClass('inBasket');	
 			});
 		} else {
-			$.post("../CORE/sql.php?operation=edit&id="+bucketItemID,{bucket : 's'})
-			 .done(function(){
-				bucketItem.addClass('inBucket');	
+			$.post("../CORE/sql.php?operation=edit&id="+basketItemID,{basket : 's'})
+			 .done(function(e){
+				basketItem.addClass('inBasket');	
 			});
 		}
 	});

@@ -6,32 +6,32 @@ if($_REQUEST['init']==1){
     $search = '%';
     $typeFilter = '%';
     $available = 'true';
-	$bucket = '%';
+	$basket = '%';
 } elseif(isset($_REQUEST['search'])) {
     $search = $_REQUEST["search"];
     $typeFilter = $_SESSION["typeFilter"];
     $available = 'true';
-	$bucket = $_SESSION['bucket'];
+	$basket = $_SESSION['basket'];
 } elseif(isset($_REQUEST['typeFilter'])) {
     $search = $_SESSION["search"];
     $typeFilter = $_REQUEST["typeFilter"];
     $available = 'true';
-	$bucket = $_SESSION['bucket'];
+	$basket = $_SESSION['basket'];
 }  elseif(isset($_REQUEST['available'])) {
     $search = $_SESSION["search"];
     $typeFilter = $_SESSION["typeFilter"];
     $available = 'false';
-	$bucket = $_SESSION['bucket'];
-} elseif(isset($_REQUEST['bucket'])){
+	$basket = $_SESSION['basket'];
+} elseif(isset($_REQUEST['basket'])){
     $search = $_SESSION["search"];
     $typeFilter = $_SESSION['typeFilter'];
-    $available = 'false';
-	$bucket = $_REQUEST['bucket'];
+    $available = '%';
+	$basket = $_REQUEST['basket'];
 } else {
     $search = $_SESSION["search"];
     $typeFilter = $_SESSION["typeFilter"];
     $available = 'true';
-	$bucket = '%';
+	$basket = '%';
 }
 
 $username = $_COOKIE["username"];
@@ -52,14 +52,14 @@ else
 
 $_SESSION['search'] = $search;
 $_SESSION['typeFilter'] = $typeFilter;
-$_SESSION['bucket'] = $bucket;
+$_SESSION['basket'] = $basket;
 setcookie("color_pref",$color, time() + (86400 * 30), "/"); // 86400 = 1 day
 setcookie("pref_lang",$lang, time() + (86400 * 30), "/"); // 86400 = 1 day
 
 require_once("CORE/strings.php");
 
 $page = pathinfo($_SERVER['PHP_SELF'], PATHINFO_FILENAME);
-if($bucket=="s") $page = $page."/?bucket=s";
+if($basket=="s") $page = $page."/?basket=s";
 
 if($_SESSION["debug"]=="true" OR $_REQUEST["debug"]=="true"){
     echo "linguage: ".$lang."<br>";
@@ -107,8 +107,8 @@ if($_SESSION["debug"]=="true" OR $_REQUEST["debug"]=="true"){
                 </form>
             <?} else {
                 switch ($page){
-					case "index/?bucket=s":
-						echo "Bucket";
+					case "index/?basket=s":
+						echo "basket";
 						break;
                     case "add_item":
                         echo $stringAddItem;

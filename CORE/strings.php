@@ -23,7 +23,7 @@ if($lang=="eng") {
     $stringDescription = "Description";
     
     // botton
-	$addBucket = "Add to bucket";
+	$addBucket = "Add to basket";
     $stringBtnSubmit = "save";
     $stringBtnDel = "delate";
     
@@ -104,7 +104,7 @@ if($lang=="eng") {
     $stringDescription = "Descripción";
     
     // botton
-	$addBucket = "Add to bucket";
+	$addBucket = "Add to basket";
     $stringBtnSubmit = "guardar";
     $stringBtnDel = "borra";
 
