@@ -13,7 +13,7 @@
         right: 6px !important;
     }
     
-	.view > .mainView > div > form > .itemViewRow > .nameItem{
+	.view > .mainView > div > .itemViewRow > .nameItem{
         font-size: 30px;
 	}
 	
@@ -21,10 +21,14 @@
         font-size: 20px;
     }
     
-    .view > .mainView > div > form > .viewItem > .itemViewRow > .listItemPhoto > .listItem{
-        width: 200px;
+    .view > .mainView > div > .viewItem > .itemViewRow > .listItemPhoto > .listItem{
         height: 200px;
     }
+
+	.view > .mainView > div > .viewItem > .itemViewRow > .listItemPhoto > .listItem > form{
+		min-width: 200px;
+		height: 200px;
+	}
     
     .view > .mainView {
         max-height: calc(100% - 130px);
@@ -69,10 +73,14 @@
         left: 0;
     }
     
-    .view > .mainView > div > form > .viewItem > .itemViewRow > .listItemPhoto > .listItem{
-        width: 250px;
+    .view > .mainView > div > .viewItem > .itemViewRow > .listItemPhoto > .listItem{
         height: 250px;
     }
+	
+	.view > .mainView > div > .viewItem > .itemViewRow > .listItemPhoto > .listItem > form{
+		min-width: 250px;
+		height: 250px;
+	}
 } 
 
 /* Large devices (laptops/desktops, 992px and up) */
@@ -120,11 +128,15 @@
         left: 25%;
     }
     
-    .view > .mainView > div > form > .viewItem > .itemViewRow > .listItemPhoto > .listItem{
-        width: 250px;
+    .view > .mainView > div > .viewItem > .itemViewRow > .listItemPhoto > .listItem{
         height: 250px;
     }
     
+	.view > .mainView > div > .viewItem > .itemViewRow > .listItemPhoto > .listItem > form{
+		min-width: 250px;
+		height: 250px;
+	}
+	
     .row > .quantityItem {
         right: 20%;
     }

@@ -4,15 +4,15 @@
 *
 */
 
-.pink > .navBottom > nav > .activeNav, .pink > .view > .mainView > div > form > .navMenu > .activeMenu {
+.pink > .navBottom > nav > .activeNav, .pink > .view > .mainView > div > .navMenu > .activeMenu {
     color: blueviolet;
 }
 
-.pink > .navBottom > nav > .activeNav::after, .pink > .view > .mainView > div > form > .navMenu > .activeMenu::after {
+.pink > .navBottom > nav > .activeNav::after, .pink > .view > .mainView > div > .navMenu > .activeMenu::after {
     background-color: blueviolet;
 }
 
-.pink > .filterSelector > .listFilter > .listFilterActive, .pink > .filterSelector > .listFilter > .listFilterClear, .pink > .header > .formSearch > .btnSearch > span, .pink > .header > .formSearch > .btnSearch > span > i, .pink > .loader::after, .pink > .view > .mainView > div > form > .viewItem > .itemViewRow > .typeItem, .pink > .view > .mainView > div > form > .editItem > .itemViewRow > .typeItem, .pink > .view > .mainView > div > .btnSubmit{
+.pink > .filterSelector > .listFilter > .listFilterActive, .pink > .filterSelector > .listFilter > .listFilterClear, .pink > .header > .formSearch > .btnSearch > span, .pink > .header > .formSearch > .btnSearch > span > i, .pink > .loader::after, .pink > .view > .mainView > div > .viewItem > .itemViewRow > .typeItem, .pink > .view > .mainView > div > form > .editItem > .itemViewRow > .typeItem, .pink > .view > .mainView > div > .btnSubmit{
     border-color: blueviolet;
     background-color: lavender;
     color: blueviolet;
@@ -24,15 +24,15 @@
 *
 */
 
-.green > .navBottom > nav > .activeNav, .green > .view > .mainView > div > form > .navMenu > .activeMenu {
+.green > .navBottom > nav > .activeNav, .green > .view > .mainView > div > .navMenu > .activeMenu {
     color: lightseagreen;
 }
 
-.green > .navBottom > nav > .activeNav::after, .green > .view > .mainView > div > form > .navMenu > .activeMenu::after {
+.green > .navBottom > nav > .activeNav::after, .green > .view > .mainView > div > .navMenu > .activeMenu::after {
     background-color: lightseagreen;
 }
 
-.green > .filterSelector > .listFilter > .listFilterActive, .green > .filterSelector > .listFilter > .listFilterClear, .green > .header > .formSearch > .btnSearch > span, .green > .header > .formSearch > .btnSearch > span > i, .green > .loader::after, .green > .view > .mainView > div > form > .viewItem > .itemViewRow > .typeItem, .green > .view > .mainView > div > form > .editItem > .itemViewRow > .typeItem, .green > .view > .mainView > div > .btnSubmit{
+.green > .filterSelector > .listFilter > .listFilterActive, .green > .filterSelector > .listFilter > .listFilterClear, .green > .header > .formSearch > .btnSearch > span, .green > .header > .formSearch > .btnSearch > span > i, .green > .loader::after, .green > .view > .mainView > div > .viewItem > .itemViewRow > .typeItem, .green > .view > .mainView > div > form > .editItem > .itemViewRow > .typeItem, .green > .view > .mainView > div > .btnSubmit{
     border-color: lightseagreen;
     background-color: #dcfddc;
     color: lightseagreen;
@@ -45,15 +45,15 @@
 *
 */
 
-.bw > .navBottom > nav > .activeNav, .bw > .view > .mainView > div > form > .navMenu > .activeMenu {
+.bw > .navBottom > nav > .activeNav, .bw > .view > .mainView > div > .navMenu > .activeMenu {
     color: black;
 }
 
-.bw > .navBottom > nav > .activeNav::after, .bw > .view > .mainView > div > form > .navMenu > .activeMenu::after {
+.bw > .navBottom > nav > .activeNav::after, .bw > .view > .mainView > div > .navMenu > .activeMenu::after {
     background-color: black;
 }
 
-.bw > .filterSelector > .listFilter > .listFilterActive, .bw > .filterSelector > .listFilter > .listFilterClear, .bw > .header > .formSearch > .btnSearch > span, .bw > .header > .formSearch > .btnSearch > span > i, .bw > .loader::after, .bw > .view > .mainView > div > form > .viewItem > .itemViewRow > .typeItem, .bw > .view > .mainView > div > form > .editItem > .itemViewRow > .typeItem, .bw > .view > .mainView > div > .btnSubmit{
+.bw > .filterSelector > .listFilter > .listFilterActive, .bw > .filterSelector > .listFilter > .listFilterClear, .bw > .header > .formSearch > .btnSearch > span, .bw > .header > .formSearch > .btnSearch > span > i, .bw > .loader::after, .bw > .view > .mainView > div > .viewItem > .itemViewRow > .typeItem, .bw > .view > .mainView > div > form > .editItem > .itemViewRow > .typeItem, .bw > .view > .mainView > div > .btnSubmit{
     border-color: black;
     background-color: white;
     color: black;
@@ -66,15 +66,15 @@
 *
 */
 
-.blue > .navBottom > nav > .blue > .activeNav, .blue > .view > .mainView > div > form > .navMenu > .activeMenu {
+.blue > .navBottom > nav > .blue > .activeNav, .blue > .view > .mainView > div > .navMenu > .activeMenu {
     color: cornflowerblue;
 }
 
-.blue > .navBottom > nav > .activeNav::after, .blue > .view > .mainView > div > form > .navMenu > .activeMenu::after {
+.blue > .navBottom > nav > .activeNav::after, .blue > .view > .mainView > div > .navMenu > .activeMenu::after {
     background-color: cornflowerblue;
 }
 
-.blue > .filterSelector > .listFilter > .listFilterActive, .blue > .filterSelector > .listFilter > .listFilterClear, .blue > .header > .formSearch > .btnSearch > span, .blue > .header > .formSearch > .btnSearch > span > i, .blue > .loader::after, .blue > .view > .mainView > div > form > .viewItem > .itemViewRow > .typeItem, .blue > .view > .mainView > div > form > .editItem > .itemViewRow > .typeItem, .blue > .view > .mainView > div > .btnSubmit{
+.blue > .filterSelector > .listFilter > .listFilterActive, .blue > .filterSelector > .listFilter > .listFilterClear, .blue > .header > .formSearch > .btnSearch > span, .blue > .header > .formSearch > .btnSearch > span > i, .blue > .loader::after, .blue > .view > .mainView > div > .viewItem > .itemViewRow > .typeItem, .blue > .view > .mainView > div > form > .editItem > .itemViewRow > .typeItem, .blue > .view > .mainView > div > .btnSubmit{
     border-color: cornflowerblue;
     background-color: aliceblue;
     color: cornflowerblue;

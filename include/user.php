@@ -41,6 +41,14 @@ if ($result->num_rows > 0) {
                 </div>
             </div>
         </div>
+		<div class="rowOptGroup linkItem" data-link="http://www.thomasmaneggia.it/gestionale/">
+            <div class="rowOpt">
+                <i class="fas fa-link"></i>
+                <div>
+                    Go to gestionale
+                </div>
+            </div>
+		</div>
     </section>
 <? }
 include ("../footer.php");?>

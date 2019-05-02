@@ -9,6 +9,12 @@ $(document).ready(function () {
         slider = $('.slider'),
 		basketItem = $('.basketItem');
     
+	var uploadFile = ('#uploadFile'),
+		idElementUpload = $('#uploadFile').attr('id-element'),
+		addFile = $('.addFile'),
+		listItemPhoto = $('.listItemPhoto'),
+		addFileBtn = $('.addFileBtn');
+	
 	var formData = $('#editItemFrom'),
 		idElement = $('#editItemFrom').attr('id-element');
 	
@@ -18,7 +24,37 @@ $(document).ready(function () {
     var quantityChange = $('#quantityChange');
 	
 	var basketItemID = basketItem.attr('item-id');
-	   
+	
+	
+	addFile.on('change',function(){
+		var formData = new FormData();
+
+        var files = addFile[0].files[0];
+
+        formData.append('itemPhoto',files);
+		
+		$.ajax({
+			url: '../CORE/sql.php?operation=edit_photo&id='+idElementUpload,
+			type: 'POST',
+			data: formData,
+			contentType: false,
+			processData: false,
+			success: function(response){
+				listItemPhoto.append('<li class=\"listItem\"><img src=\"'+response+'\"></li>');
+				console.log(response);
+			}
+		});
+	});
+	
+	listItemPhoto.each(function(i){
+		var photo = $(this);
+		photo.on('click',function(){
+					var idPhoto = $(this).attr('id-photo');	
+
+			console.log(idPhoto);
+		});
+	});
+	
 	saveEditItem.on('click',function(){
 		// at the click serializeArray
 		var dataSerialize = formData.serializeArray();

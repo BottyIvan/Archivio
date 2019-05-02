@@ -29,99 +29,107 @@ $userResult = $conn->query($userQuery);
 $user = $userResult->fetch_assoc();
 ?>
 <div>
-    <form method="post" action="#" id-element="<?=$row["id"]?>" id="editItemFrom" name="editItemFrom" enctype="multipart/form-data">
-        <div class="itemViewRow toolBar">
-            <span class="nameItem"><?=$row["name"]?></span>
-            <span><?=$row["position"]?></span>
-        </div>
-		<nav class="navMenu">
-			<li class="navMenuItem activeMenu" menu="view">View item</li>
-			<? if($user["role"]!="user"){?>
-			<li class="navMenuItem" menu="edit">Edit</li>
-			<?}?>
-		</nav>
-		<div class="viewItem">
-			<div class="itemViewRow">
-				<span class="typeItem"><?=$row["type"]?></span>
-				<span class="basketItem <?if($row["basket"]=="s") echo "inBasket";?>" item-id="<?=$row["id"]?>"><i class="fas fa-shopping-cart"></i>&nbsp;<?=$addBucket?></span>
-			</div>
-			<?
-			$itemPhoto = "SELECT * FROM archive_item_image WHERE id_archive = $item";
-			$rsPhoto = $conn->query($itemPhoto);
-			if ($rsPhoto->num_rows > 0) {?>
-				<div class="itemViewRow">
-					<ul class="listItemPhoto">
-						<?
-							while($photoRow = $rsPhoto->fetch_assoc()){?>
-							<li class="listItem">
-								<img src="<?=INDEX."/itemPhoto/".$photoRow["image"]?>">
-							</li>
-						<?}?>
-					</ul>
-				</div>
-			<?}?>
-			<div class="itemViewRow">
-				<span><?=$stringQuantity?>&nbsp;:&nbsp;</span><span id="quantityChange"></span>
-				<div class="slider" item-id="<?=$row["id"]?>" item-quantity="<?=$row["quantity"]?>"></div>
-			</div>
-			<? if($row["description"]!=""){?>
-			<div class="itemViewRow">
-				<?=$row["description"]?>
-			</div>
-			<?}?>
-			<? if($row["quantity"]!=0){?>
-			<div class="itemViewRow">
-				<span><?=$stringQuantity?>&nbsp;:&nbsp;</span><?=$row["quantity"]?>
-			</div>
-			<?}?>
-			<? if($row["id"]!=0){?>
-			<div class="itemViewRow">
-				<span><?=$stringCode?>&nbsp;:&nbsp;</span><?=$row["id"]?>
-			</div>
-			<?}?>
-			<? if($row["priority"]!=0){?>
-			<div class="itemViewRow">
-				<span><?=$stringPriority?>&nbsp;:&nbsp;</span><?=$row["priority"]?>
-			</div>
-			<?}?>
-			<? if($row["length"]!=0){?>
-			<div class="itemViewRow">
-				<span><?=$stringLength?>&nbsp;:&nbsp;</span><?=$row["length"]?>
-			</div>
-			<?}?>
-			<? if($row["high"]!=0){?>
-			<div class="itemViewRow">
-				<span><?=$stringHigh?>&nbsp;:&nbsp;</span><?=$row["high"]?>
-			</div>
-			<?}?>
-			<? if($row["width"]!=0){?>
-			<div class="itemViewRow">
-				<span><?=$stringWidth?>&nbsp;:&nbsp;</span><?=$row["width"]?>
-			</div>
-			<?}?>
-			<? if($row["depth"]!=0){?>
-			<div class="itemViewRow">
-				<span><?=$stringDepth?>&nbsp;:&nbsp;</span><?=$row["depth"]?>
-			</div>
-			<?}?>
-			<? if($row["color"]!=0){?>
-			<div class="itemViewRow">
-				<span><?=$stringColor?>&nbsp;:&nbsp;</span><?=$row["color"]?>
-			</div>
-			<?}?>
-			<? if($row["material"]!=0){?>
-			<div class="itemViewRow">
-				<span><?=$stringMaterial?>&nbsp;:&nbsp;</span><?=$row["material"]?>
-			</div>
-			<?}?>
-			<? if($row["position"]!=""){?>
-			<div class="itemViewRow">
-				<span><?=$stringPosition?>&nbsp;:&nbsp;</span><?=$row["position"]?>
-			</div>
-			<?}?>
-		</div>
+	<div class="itemViewRow toolBar">
+		<span class="nameItem"><?=$row["name"]?></span>
+		<span><?=$row["position"]?></span>
+	</div>
+	<nav class="navMenu">
+		<li class="navMenuItem activeMenu" menu="view">View item</li>
 		<? if($user["role"]!="user"){?>
-        <div class="editItem">
+		<li class="navMenuItem" menu="edit">Edit</li>
+		<?}?>
+	</nav>
+	<div class="viewItem">
+		<div class="itemViewRow">
+			<span class="typeItem"><?=$row["type"]?></span>
+			<span class="basketItem <?if($row["basket"]=="s") echo "inBasket";?>" item-id="<?=$row["id"]?>"><i class="fas fa-shopping-cart"></i>&nbsp;<?=$addBucket?></span>
+		</div>
+		<?
+		$itemPhoto = "SELECT * FROM archive_item_image WHERE id_archive = $item";
+		$rsPhoto = $conn->query($itemPhoto);
+		if ($rsPhoto->num_rows > 0) {?>
+			<div class="itemViewRow">
+				<ul class="listItemPhoto">
+					<?
+						while($photoRow = $rsPhoto->fetch_assoc()){?>
+						<li class="listItem" id-photo="<?=$photoRow["id"]?>">
+							<img src="<?=INDEX."/itemPhoto/".$photoRow["image"]?>">
+						</li>
+					<?}?>
+					<li class="listItem addFileBtn">
+						<form action="#" id-element="<?=$row["id"]?>" method="post" enctype="multipart/form-data" id="uploadFile" name="uploadFile">
+							<input type="file" class="addFile" name="itemPhoto" id="itemPhoto">
+							<label for="itemPhoto">
+								<i class="fas fa-plus-circle"></i>
+							</label>
+						</form>
+					</li>
+				</ul>
+			</div>
+		<?}?>
+		<div class="itemViewRow">
+			<span><?=$stringQuantity?>&nbsp;:&nbsp;</span><span id="quantityChange"></span>
+			<div class="slider" item-id="<?=$row["id"]?>" item-quantity="<?=$row["quantity"]?>"></div>
+		</div>
+		<? if($row["description"]!=""){?>
+		<div class="itemViewRow">
+			<?=$row["description"]?>
+		</div>
+		<?}?>
+		<? if($row["quantity"]!=0){?>
+		<div class="itemViewRow">
+			<span><?=$stringQuantity?>&nbsp;:&nbsp;</span><?=$row["quantity"]?>
+		</div>
+		<?}?>
+		<? if($row["id"]!=0){?>
+		<div class="itemViewRow">
+			<span><?=$stringCode?>&nbsp;:&nbsp;</span><?=$row["id"]?>
+		</div>
+		<?}?>
+		<? if($row["priority"]!=0){?>
+		<div class="itemViewRow">
+			<span><?=$stringPriority?>&nbsp;:&nbsp;</span><?=$row["priority"]?>
+		</div>
+		<?}?>
+		<? if($row["length"]!=0){?>
+		<div class="itemViewRow">
+			<span><?=$stringLength?>&nbsp;:&nbsp;</span><?=$row["length"]?>
+		</div>
+		<?}?>
+		<? if($row["high"]!=0){?>
+		<div class="itemViewRow">
+			<span><?=$stringHigh?>&nbsp;:&nbsp;</span><?=$row["high"]?>
+		</div>
+		<?}?>
+		<? if($row["width"]!=0){?>
+		<div class="itemViewRow">
+			<span><?=$stringWidth?>&nbsp;:&nbsp;</span><?=$row["width"]?>
+		</div>
+		<?}?>
+		<? if($row["depth"]!=0){?>
+		<div class="itemViewRow">
+			<span><?=$stringDepth?>&nbsp;:&nbsp;</span><?=$row["depth"]?>
+		</div>
+		<?}?>
+		<? if($row["color"]!=0){?>
+		<div class="itemViewRow">
+			<span><?=$stringColor?>&nbsp;:&nbsp;</span><?=$row["color"]?>
+		</div>
+		<?}?>
+		<? if($row["material"]!=0){?>
+		<div class="itemViewRow">
+			<span><?=$stringMaterial?>&nbsp;:&nbsp;</span><?=$row["material"]?>
+		</div>
+		<?}?>
+		<? if($row["position"]!=""){?>
+		<div class="itemViewRow">
+			<span><?=$stringPosition?>&nbsp;:&nbsp;</span><?=$row["position"]?>
+		</div>
+		<?}?>
+	</div>
+	<? if($user["role"]!="user"){?>
+	<div class="editItem">
+		<form method="post" action="#" id-element="<?=$row["id"]?>" id="editItemFrom" name="editItemFrom" enctype="multipart/form-data">
             <div class="itemViewRow">
                 <span><?=$stringName?>&nbsp;:</span>
                 <input type="text" class="input" name="name" placeholder="<?=$stringName?>" value="<?=$row["name"]?>">
@@ -183,12 +191,9 @@ $user = $userResult->fetch_assoc();
                 <br>
                 <textarea class="inputTextarea" name="description" placeholder="<?=$stringDescription?>"><?=$row["description"]?></textarea>
             </div>
-            <div class="itemViewRow">
-                <input type="file" name="itemPhoto" id="itemPhoto">
-            </div>
-        </div>
-		<?}?>
-    </form>
+		</form>
+	</div>
+	<?}?>
 	<? if($user["role"]!="user"){?>
     <button class="btnSubmit saveEditItem" type="button">
         <i class="fas fa-save"></i>&nbsp;<?=$stringBtnSubmit?>

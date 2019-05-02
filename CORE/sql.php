@@ -66,14 +66,38 @@ if($operation=="edit"){
     if ($conn->query($queryEdit) != TRUE) {
         echo "Error: " . $queryEdit . "<br>" . $conn->error;
     }
-    
+	
+    header("location: ../");
+}
+
+
+if($operation=="edit_photo"){
      if(!is_null($tmpItemPhoto)){
         $dirItem = "../itemPhoto/".$id;
         $dirItem = checkForDir($dirItem);   
-        uploadItemPhoto($dirItem,$itemPhoto,$tmpItemPhoto,$id,$conn);
+        $is_uploaded = uploadItemPhoto($dirItem,$itemPhoto,$tmpItemPhoto,$id,$conn);
     }
    
-    header("location: ../");
+	$query = "SELECT * FROM archive_item_image WHERE id_archive = $id ORDER BY id DESC";
+	$rs = $conn->query($query);
+	$img = $rs->fetch_assoc();
+	echo $img['image'];
+	exit();
+}
+
+if($operation=="del_photo"){
+	$query = "SELECT * FROM archive_item_image WHERE id = $id";
+	$rs = $conn->query($query);
+	$img = $rs->fetch_assoc();
+
+	if(unlink($img['image'])){
+		$queryDelPhoto = "DELETE FROM archive_item_image WHERE id = $id";
+		 if ($conn->query($queryDelPhoto) != TRUE) {
+			echo "Error: " . $queryEdit . "<br>" . $conn->error;
+		}	
+	}
+	
+	exit();
 }
 
 if($operation=="del"){
@@ -140,12 +164,13 @@ function uploadItemPhoto($dir,$photo,$tmpPhoto,$id_archive,$conn){
                 echo "Error: " . $queryAddPhoto . "<br>" . $conn->error;
             }
         }
-        echo "File is an image - " . $check["mime"] . ".";
         $uploadOk = 1;
+		// upload file ok
     } else {
-        echo "File is not an image.";
         $uploadOk = 0;
+		// upload file error
     }
+	return $uploadOk;
 }
 
 function uploadUserPhoto($dir,$photo,$tmpPhoto,$conn){
