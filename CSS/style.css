@@ -493,24 +493,24 @@ body{
     list-style: none;
 }
 
-.view > .mainView > div > .viewItem > .itemViewRow > .listItemPhoto > .listItem{
+.view > .mainView > div > .viewItem > .itemViewRow > .listItemPhoto > .listItem, .view > .mainView > div > .viewItem > .itemViewRow > .listItemPhoto > .addFileBtn{
     margin-left: 5px;
     margin-right: 5px;
 } 
 
-.view > .mainView > div > .viewItem > .itemViewRow > .listItemPhoto > .listItem > img, .view > .mainView > div > .viewItem > .itemViewRow > .listItemPhoto > .listItem > form{
+.view > .mainView > div > .viewItem > .itemViewRow > .listItemPhoto > .listItem > img, .view > .mainView > div > .viewItem > .itemViewRow > .listItemPhoto > .addFileBtn > form{
     height: 100%;
     border-radius: 5px;
     border: 1px solid whitesmoke;
 }
 
-.view > .mainView > div > .viewItem > .itemViewRow > .listItemPhoto > .listItem > form{
+.view > .mainView > div > .viewItem > .itemViewRow > .listItemPhoto > .addFileBtn > form{
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
-.view > .mainView > div > .viewItem > .itemViewRow > .listItemPhoto > .listItem > form > label{
+.view > .mainView > div > .viewItem > .itemViewRow > .listItemPhoto > .addFileBtn > form > label{
 	cursor: pointer;
 }
 

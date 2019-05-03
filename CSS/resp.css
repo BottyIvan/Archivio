@@ -21,11 +21,11 @@
         font-size: 20px;
     }
     
-    .view > .mainView > div > .viewItem > .itemViewRow > .listItemPhoto > .listItem{
+    .view > .mainView > div > .viewItem > .itemViewRow > .listItemPhoto > .listItem, .view > .mainView > div > .viewItem > .itemViewRow > .listItemPhoto > .addFileBtn{
         height: 200px;
     }
 
-	.view > .mainView > div > .viewItem > .itemViewRow > .listItemPhoto > .listItem > form{
+	.view > .mainView > div > .viewItem > .itemViewRow > .listItemPhoto > .addFileBtn > form{
 		min-width: 200px;
 		height: 200px;
 	}
@@ -73,11 +73,11 @@
         left: 0;
     }
     
-    .view > .mainView > div > .viewItem > .itemViewRow > .listItemPhoto > .listItem{
+    .view > .mainView > div > .viewItem > .itemViewRow > .listItemPhoto > .listItem, .view > .mainView > div > .viewItem > .itemViewRow > .listItemPhoto > .addFileBtn{
         height: 250px;
     }
 	
-	.view > .mainView > div > .viewItem > .itemViewRow > .listItemPhoto > .listItem > form{
+	.view > .mainView > div > .viewItem > .itemViewRow > .listItemPhoto > .addFileBtn > form{
 		min-width: 250px;
 		height: 250px;
 	}
@@ -128,11 +128,11 @@
         left: 25%;
     }
     
-    .view > .mainView > div > .viewItem > .itemViewRow > .listItemPhoto > .listItem{
+    .view > .mainView > div > .viewItem > .itemViewRow > .listItemPhoto > .listItem, .view > .mainView > div > .viewItem > .itemViewRow > .listItemPhoto > .addFileBtn{
         height: 250px;
     }
     
-	.view > .mainView > div > .viewItem > .itemViewRow > .listItemPhoto > .listItem > form{
+	.view > .mainView > div > .viewItem > .itemViewRow > .listItemPhoto > .addFileBtn > form{
 		min-width: 250px;
 		height: 250px;
 	}

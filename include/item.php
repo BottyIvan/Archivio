@@ -46,8 +46,7 @@ $user = $userResult->fetch_assoc();
 		</div>
 		<?
 		$itemPhoto = "SELECT * FROM archive_item_image WHERE id_archive = $item";
-		$rsPhoto = $conn->query($itemPhoto);
-		if ($rsPhoto->num_rows > 0) {?>
+		$rsPhoto = $conn->query($itemPhoto);?>
 			<div class="itemViewRow">
 				<ul class="listItemPhoto">
 					<?
@@ -56,7 +55,7 @@ $user = $userResult->fetch_assoc();
 							<img src="<?=INDEX."/itemPhoto/".$photoRow["image"]?>">
 						</li>
 					<?}?>
-					<li class="listItem addFileBtn">
+					<li class="addFileBtn">
 						<form action="#" id-element="<?=$row["id"]?>" method="post" enctype="multipart/form-data" id="uploadFile" name="uploadFile">
 							<input type="file" class="addFile" name="itemPhoto" id="itemPhoto">
 							<label for="itemPhoto">
@@ -66,7 +65,6 @@ $user = $userResult->fetch_assoc();
 					</li>
 				</ul>
 			</div>
-		<?}?>
 		<div class="itemViewRow">
 			<span><?=$stringQuantity?>&nbsp;:&nbsp;</span><span id="quantityChange"></span>
 			<div class="slider" item-id="<?=$row["id"]?>" item-quantity="<?=$row["quantity"]?>"></div>

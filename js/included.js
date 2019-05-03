@@ -13,6 +13,7 @@ $(document).ready(function () {
 		idElementUpload = $('#uploadFile').attr('id-element'),
 		addFile = $('.addFile'),
 		listItemPhoto = $('.listItemPhoto'),
+		listItem = $('.listItem'),
 		addFileBtn = $('.addFileBtn');
 	
 	var formData = $('#editItemFrom'),
@@ -46,12 +47,18 @@ $(document).ready(function () {
 		});
 	});
 	
-	listItemPhoto.each(function(i){
+	listItem.each(function(i){
 		var photo = $(this);
 		photo.on('click',function(){
-					var idPhoto = $(this).attr('id-photo');	
-
-			console.log(idPhoto);
+			var idPhoto = $(this).attr('id-photo');	
+			if(confirm('Remove this photo ?')){
+				$.post("../CORE/sql.php?operation=del_photo&id="+idPhoto)
+				 .done(function(e){
+					console.log(e);
+					photo.remove();
+					console.log(idPhoto);
+				});
+			}
 		});
 	});
 	
